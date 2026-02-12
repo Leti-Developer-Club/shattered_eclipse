@@ -10,16 +10,19 @@ config_version=5
 
 [application]
 
-config/name="tetris"
-run/main_scene="uid://u1jkfaj7rxw0"
+config/name="Chronicles of the Sun Kings"
+run/main_scene="res://scenes/splash_screen.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AchievementManager="*res://scripts/achievement_manager.gd"
+
 [display]
 
-window/size/viewport_width=720
-window/size/viewport_height=950
-window/size/mode=3
+window/size/viewport_width=700
+window/size/viewport_height=715
 
 [physics]
 

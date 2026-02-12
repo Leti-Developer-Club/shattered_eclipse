@@ -77,7 +77,8 @@ var piece_atlas : Vector2i
 var next_piece_atlas : Vector2i
 
 var score : int
-var clear_reward: int = 130
+var level: int = 0
+var lines_cleared: int = 0
 var is_game_running: bool 
 
 @onready var board: TileMapLayer = $board
@@ -85,21 +86,27 @@ var is_game_running: bool
 
 func _ready() -> void:
 	$game_hud/new_game_button.pressed.connect( start_new_game )
+	$game_hud/main_menu_button.pressed.connect( _on_main_menu_pressed )
 	start_new_game()
 	$game_hud/new_game_button.visible = false
+	$game_hud/main_menu_button.visible = false
 
 
 
 func start_new_game() -> void:
 	score = 0
+	level = 0
+	lines_cleared = 0
 	is_game_running = true
 	
 	$game_hud/game_over_label.visible = false
 	$game_hud/new_game_button.visible = false
+	$game_hud/main_menu_button.visible = false
 
+	update_hud()
 	clear_board()
 	clear_tetromino()
-	next_tetromino_preview() #wahala dey
+	next_tetromino_preview()
 	cur_tetromino_type = choose_tetromino()
 	piece_atlas = Vector2i( all_tetrominoes.find( cur_tetromino_type), 0 )
 	next_tetromino_type = choose_tetromino()
@@ -121,8 +128,8 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_up"):
 			rotate_tetromino()
 		
-		var cur_fall_interval = fall_interval
-		if Input.is_action_just_pressed("ui_down"):
+		var cur_fall_interval = get_fall_speed()
+		if Input.is_action_pressed("ui_down"):
 			cur_fall_interval /= fast_fall_multiplier
 		
 		fall_timer += delta
@@ -186,17 +193,24 @@ func next_tetromino_preview() -> void:
 
 func check_rows() -> void:
 	var row: int = rows
+	var rows_cleared_this_time: int = 0
+	
 	while row > 0:
 		var cells_finished:= 0
 		for i in range( columns ):
 			if not is_within_bounds( Vector2i( i +1, row )):
 				cells_finished += 1
 		if cells_finished == columns:
-				shift_rows( row )
-				score += clear_reward
-				$game_hud/score_label.text = "Score: " + str( score )
+			shift_rows( row )
+			rows_cleared_this_time += 1
 		else: 
-				row -= 1
+			row -= 1
+	
+	if rows_cleared_this_time > 0:
+		lines_cleared += rows_cleared_this_time
+		score += calculate_score(rows_cleared_this_time)
+		update_level()
+		update_hud()
 
 func shift_rows(row) -> void:
 	var atlas: Vector2i
@@ -250,5 +264,65 @@ func is_game_over() -> void:
 			land_tetromino()
 			$game_hud/game_over_label.visible = true
 			$game_hud/new_game_button.visible = true
+			$game_hud/main_menu_button.visible = true
 
 			is_game_running = false
+
+func _on_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+
+# Calculate score based on lines cleared at once
+func calculate_score(lines_cleared_at_once: int) -> int:
+	match lines_cleared_at_once:
+		1: return 40 * (level + 1)
+		2: return 100 * (level + 1)
+		3: return 300 * (level + 1)
+		4: return 1200 * (level + 1)
+	return 0
+
+# Update level based on total lines cleared (every 10 lines)
+func update_level() -> void:
+	var new_level = lines_cleared / 10
+	if new_level != level:
+		level = new_level
+		# Check for achievement unlocks
+		var unlocked = AchievementManager.check_and_unlock_achievements(level)
+		for achievement in unlocked:
+			show_achievement_notification(achievement)
+
+# Get fall speed based on current level
+func get_fall_speed() -> float:
+	if level <= 9:
+		return 0.8 - (level * 0.07)
+	elif level <= 18:
+		return 0.1
+	else:
+		return 0.05
+
+# Update all HUD labels
+func update_hud() -> void:
+	$game_hud/huge_panel/score_label.text = "SCORE: " + str(score)
+	$game_hud/huge_panel/lines_cleared.text = "LINES: " + str(lines_cleared)
+	$game_hud/huge_panel/level.text = "LEVEL: " + str(level)
+
+# Show achievement unlock notification
+func show_achievement_notification(achievement: Dictionary) -> void:
+	# Create a simple notification label
+	var notification = Label.new()
+	notification.text = "Achievement Unlocked!\n" + achievement.name
+	notification.add_theme_font_size_override("font_size", 24)
+	notification.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	notification.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	notification.modulate = Color(1, 0.8, 0, 1)  # Gold color
+	
+	# Position it in the center
+	notification.position = Vector2(360, 400)
+	notification.size = Vector2(400, 100)
+	notification.z_index = 100
+	
+	add_child(notification)
+	
+	# Fade out and remove after 3 seconds
+	var tween = create_tween()
+	tween.tween_property(notification, "modulate:a", 0.0, 1.0).set_delay(2.0)
+	tween.tween_callback(notification.queue_free)

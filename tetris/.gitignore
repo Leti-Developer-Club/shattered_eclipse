@@ -1,6 +1,7 @@
 .godot/ 
 *.import
 *.translation
+*.uid
 export_presets.cfg
 .mono/
 data_*/
