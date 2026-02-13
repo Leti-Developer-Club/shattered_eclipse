@@ -233,7 +233,7 @@ func shift_rows(row) -> void:
 func rotate_tetromino() -> void:
 	if is_valid_rotation():
 		clear_tetromino()
-		rotation_index = ( rotation_index -1 ) % 4
+		rotation_index = ( rotation_index + 1 ) % 4
 		active_tetromino = cur_tetromino_type[ rotation_index ]
 		render_tetromino( active_tetromino, cur_position, piece_atlas)
 	pass
@@ -278,7 +278,7 @@ func is_game_over() -> void:
 			
 			# Play cry animation
 			if $game_hud/griot_cry.has_node("AnimatedSprite2D"):
-				$game_hud/griot_cry.get_node("AnimatedSprite2D").play("griot_cry")
+				$game_hud/griot_cry.get_node("AnimatedSprite2D").play("game_over_cry")
 			
 			# Play game over music
 			AudioManager.play_gameover_music()
