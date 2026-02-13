@@ -44,8 +44,20 @@ func _ready() -> void:
 	level_up_player.bus = "SFX"
 	line_clear_player.bus = "SFX"
 	
+	# Connect finished signals for looping
+	title_player.finished.connect(_on_title_finished)
+	gameplay_player.finished.connect(_on_gameplay_finished)
+	
 	# Start with title music
 	play_title_music()
+
+func _on_title_finished() -> void:
+	if current_track == "title":
+		title_player.play()
+
+func _on_gameplay_finished() -> void:
+	if current_track == "gameplay":
+		gameplay_player.play()
 
 func play_title_music() -> void:
 	if current_track == "title":
