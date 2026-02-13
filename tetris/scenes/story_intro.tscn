@@ -1,6 +1,17 @@
 [gd_scene format=3 uid="uid://dhd8s5x0mt1cd"]
 
 [ext_resource type="Script" uid="uid://bbmj6re7g5qct" path="res://scripts/story_intro.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://fuhlij05r5ju" path="res://assets/PressStart2P-Regular.ttf" id="2_pdsmg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b7j8"]
+bg_color = Color(0, 0, 0, 0.98039216)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdsmg"]
+bg_color = Color(0.49, 0.28158665, 0.058800004, 1)
 
 [node name="StoryIntro" type="Control" unique_id=1350758020]
 layout_mode = 3
@@ -38,7 +49,8 @@ theme_override_constants/separation = 15
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=600529288]
 layout_mode = 2
-theme_override_font_sizes/font_size = 36
+theme_override_fonts/font = ExtResource("2_pdsmg")
+theme_override_font_sizes/font_size = 24
 text = "The Shattered Eclipse"
 horizontal_alignment = 1
 
@@ -53,7 +65,8 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 18
+theme_override_fonts/normal_font = ExtResource("2_pdsmg")
+theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[center][color=gold]The Chronicles of the Sun-Kings[/color][/center]
 
@@ -97,7 +110,10 @@ layout_mode = 2
 
 [node name="ProgressLabel" type="Label" parent="MarginContainer/VBoxContainer/ProgressPanel" unique_id=1238374788]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+theme_override_fonts/font = ExtResource("2_pdsmg")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_2b7j8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pdsmg")
 text = "Progress: 0/4 Sun-Scrolls Restored"
 horizontal_alignment = 1
 
@@ -109,11 +125,13 @@ alignment = 1
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=1824341004]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_fonts/font = ExtResource("2_pdsmg")
+theme_override_font_sizes/font_size = 16
 text = "Back"
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer/ButtonContainer" unique_id=857960636]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_font_sizes/font_size = 22
+theme_override_fonts/font = ExtResource("2_pdsmg")
+theme_override_font_sizes/font_size = 16
 text = "Begin Quest"

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dyr23t4hskffq" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://dqex7obi8pg07" path="res://assets/tetrominoes.png" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://cr72adhvxfaku" path="res://scenes/game_hud.tscn" id="3_sugp2"]
+[ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="4_jyhfs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("2_0wfyh")
@@ -47,3 +48,11 @@ tile_set = SubResource("TileSet_sgp6g")
 tile_set = SubResource("TileSet_jyhfs")
 
 [node name="game_hud" parent="." unique_id=1317898753 instance=ExtResource("3_sugp2")]
+
+[node name="AshantiKingdom2" type="Sprite2D" parent="." unique_id=545180995]
+modulate = Color(1, 1, 1, 0.1764706)
+show_behind_parent = true
+texture_filter = 1
+position = Vector2(190.99998, 351.00003)
+scale = Vector2(6.359999, 12.800001)
+texture = ExtResource("4_jyhfs")

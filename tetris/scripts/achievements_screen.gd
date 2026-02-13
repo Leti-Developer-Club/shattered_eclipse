@@ -1,6 +1,6 @@
 extends Control
 
-@onready var achievement_container = $MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer
+@onready var achievement_container = $MarginContainer/VBoxContainer/VBoxContainer
 @onready var progress_label = $MarginContainer/VBoxContainer/ProgressLabel
 
 func _ready() -> void:
@@ -38,31 +38,38 @@ func create_achievement_item(achievement: Dictionary) -> void:
 	checkbox.button_pressed = achievement.unlocked
 	checkbox.disabled = true
 	checkbox.custom_minimum_size = Vector2(40, 40)
+	checkbox.size_flags_vertical = Control.SIZE_SHRINK_CENTER
 	item.add_child(checkbox)
 	
 	# Achievement info
 	var info_container = VBoxContainer.new()
 	info_container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	
+	info_container.alignment = BoxContainer.ALIGNMENT_CENTER 
+	var press_start_font = load("res://assets/PressStart2P-Regular.ttf")
+
 	var name_label = Label.new()
 	name_label.text = achievement.name
-	name_label.add_theme_font_size_override("font_size", 20)
+	name_label.add_theme_font_size_override("font_size", 16)
 	info_container.add_child(name_label)
+	name_label.add_theme_font_override("font", press_start_font)
 	
 	var desc_label = Label.new()
 	desc_label.text = achievement.description
-	desc_label.add_theme_font_size_override("font_size", 14)
+	desc_label.add_theme_font_size_override("font_size", 8)
 	desc_label.modulate = Color(0.8, 0.8, 0.8)
 	info_container.add_child(desc_label)
+	desc_label.add_theme_font_override("font", press_start_font)
+
 	
 	var req_label = Label.new()
 	if achievement.has("level_requirement"):
 		req_label.text = "Reach Level %d" % achievement.level_requirement
 	else:
 		req_label.text = "Complete all achievements"
-	req_label.add_theme_font_size_override("font_size", 12)
+	req_label.add_theme_font_size_override("font_size", 8)
 	req_label.modulate = Color(0.6, 0.6, 0.6)
 	info_container.add_child(req_label)
+	req_label.add_theme_font_override("font", press_start_font)
 	
 	item.add_child(info_container)
 	

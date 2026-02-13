@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b2nc6jwu3yfok"]
 
 [ext_resource type="Script" uid="uid://cjws3vr12efvu" path="res://scripts/achievements_screen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://fuhlij05r5ju" path="res://assets/PressStart2P-Regular.ttf" id="2_cvcn7"]
 
 [node name="AchievementsScreen" type="Control" unique_id=412156435]
 layout_mode = 3
@@ -38,29 +39,28 @@ theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1658226550]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cvcn7")
 theme_override_font_sizes/font_size = 48
 text = "Achievements"
 horizontal_alignment = 1
 
 [node name="ProgressLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2132342887]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_cvcn7")
 theme_override_font_sizes/font_size = 24
 text = "Progress: 0/4 (0%)"
 horizontal_alignment = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer" unique_id=636735670]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/ScrollContainer" unique_id=494328086]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=494328086]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/separation = 10
+theme_override_constants/separation = 4
 
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer" unique_id=117757413]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_cvcn7")
 theme_override_font_sizes/font_size = 24
 text = "Back"

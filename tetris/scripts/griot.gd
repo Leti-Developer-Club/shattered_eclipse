@@ -17,12 +17,18 @@ var current_action: String = "idle"
 var move_speed: float = 20.0
 var target_position: Vector2
 
+# State control
+var is_active: bool = true
+
 func _ready() -> void:
 	start_position = position
 	target_position = position
 	choose_random_action()
 
 func _physics_process(delta: float) -> void:
+	if not is_active:
+		return
+		
 	action_timer += delta
 	
 	# Check if current action is complete
@@ -39,6 +45,15 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector2.ZERO
 	
 	move_and_slide()
+
+func play_game_over_cry() -> void:
+	is_active = false
+	velocity = Vector2.ZERO
+	if animated_sprite.sprite_frames.has_animation("griot_cry"):
+		animated_sprite.play("griot_cry")
+	else:
+		# Fallback if animation doesn't exist
+		animated_sprite.play("idle_down")
 
 func choose_random_action() -> void:
 	action_timer = 0.0

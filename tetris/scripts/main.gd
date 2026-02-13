@@ -85,11 +85,11 @@ var is_game_running: bool
 @onready var active: TileMapLayer = $active
 
 func _ready() -> void:
-	$game_hud/new_game_button.pressed.connect( start_new_game )
-	$game_hud/main_menu_button.pressed.connect( _on_main_menu_pressed )
+	$game_hud/end_panel/new_game_button.pressed.connect( start_new_game )
+	$game_hud/end_panel/main_menu_button.pressed.connect( _on_main_menu_pressed )
 	start_new_game()
-	$game_hud/new_game_button.visible = false
-	$game_hud/main_menu_button.visible = false
+	$game_hud/end_panel.visible = false
+	$game_hud/griot_cry.visible = false
 
 
 
@@ -99,9 +99,14 @@ func start_new_game() -> void:
 	lines_cleared = 0
 	is_game_running = true
 	
-	$game_hud/game_over_label.visible = false
-	$game_hud/new_game_button.visible = false
-	$game_hud/main_menu_button.visible = false
+	$game_hud/end_panel.visible = false
+	
+	# Show normal Griot, hide crying Griot
+	$game_hud/griot.visible = true
+	$game_hud/griot_cry.visible = false
+	
+	# Play gameplay music
+	AudioManager.play_gameplay_music()
 
 	update_hud()
 	clear_board()
@@ -211,6 +216,9 @@ func check_rows() -> void:
 		score += calculate_score(rows_cleared_this_time)
 		update_level()
 		update_hud()
+		
+		# Play line clear sound effect
+		AudioManager.play_line_clear_sfx()
 
 func shift_rows(row) -> void:
 	var atlas: Vector2i
@@ -262,13 +270,24 @@ func is_game_over() -> void:
 	for i in active_tetromino:
 		if not is_within_bounds( i + cur_position):
 			land_tetromino()
-			$game_hud/game_over_label.visible = true
-			$game_hud/new_game_button.visible = true
-			$game_hud/main_menu_button.visible = true
+			$game_hud/end_panel.visible = true
+			
+			# Hide normal Griot and show crying Griot
+			$game_hud/griot.visible = false
+			$game_hud/griot_cry.visible = true
+			
+			# Play cry animation
+			if $game_hud/griot_cry.has_node("AnimatedSprite2D"):
+				$game_hud/griot_cry.get_node("AnimatedSprite2D").play("griot_cry")
+			
+			# Play game over music
+			AudioManager.play_gameover_music()
 
 			is_game_running = false
 
 func _on_main_menu_pressed() -> void:
+	# Return to title music when going back to main menu
+	AudioManager.play_title_music()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 # Calculate score based on lines cleared at once
@@ -285,6 +304,10 @@ func update_level() -> void:
 	var new_level = lines_cleared / 10
 	if new_level != level:
 		level = new_level
+		
+		# Play level up sound effect
+		AudioManager.play_level_up_sfx()
+		
 		# Check for achievement unlocks
 		var unlocked = AchievementManager.check_and_unlock_achievements(level)
 		for achievement in unlocked:
