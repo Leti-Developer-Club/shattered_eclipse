@@ -23,7 +23,7 @@ AudioManager="*res://scripts/audio_manager.gd"
 [display]
 
 window/size/viewport_width=700
-window/size/viewport_height=715
+window/size/viewport_height=705
 
 [physics]
 
@@ -34,4 +34,4 @@ window/size/viewport_height=715
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-environment/defaults/default_clear_color=Color(0.3, 0.3, 0.3, 1)
+environment/defaults/default_clear_color=Color(0.15, 0.15, 0.15, 1)

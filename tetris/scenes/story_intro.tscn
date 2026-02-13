@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bbmj6re7g5qct" path="res://scripts/story_intro.gd" id="1"]
 [ext_resource type="FontFile" uid="uid://fuhlij05r5ju" path="res://assets/PressStart2P-Regular.ttf" id="2_pdsmg"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_nn7ok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2b7j8"]
 bg_color = Color(0, 0, 0, 0.98039216)
@@ -23,6 +24,7 @@ grow_vertical = 2
 script = ExtResource("1")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=58071275]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -66,6 +68,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_fonts/normal_font = ExtResource("2_pdsmg")
+theme_override_fonts/bold_font = ExtResource("2_pdsmg")
+theme_override_fonts/bold_italics_font = ExtResource("2_pdsmg")
+theme_override_fonts/italics_font = ExtResource("2_pdsmg")
+theme_override_fonts/mono_font = ExtResource("2_pdsmg")
 theme_override_font_sizes/normal_font_size = 16
 bbcode_enabled = true
 text = "[center][color=gold]The Chronicles of the Sun-Kings[/color][/center]
@@ -135,3 +141,8 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_pdsmg")
 theme_override_font_sizes/font_size = 16
 text = "Begin Quest"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=487777168]
+show_behind_parent = true
+position = Vector2(360, 138)
+texture = ExtResource("3_nn7ok")
