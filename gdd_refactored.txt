@@ -1,0 +1,318 @@
+📜 GAME DESIGN DOCUMENT: Chronicles of the Sun-Kings
+REFACTORED FOR TETRIS IMPLEMENTATION
+
+═══════════════════════════════════════════════════════════════════
+
+PROJECT INFORMATION
+Team: Leti Arts Internship Team 5
+Topic: African History and Continental Heritage
+Target Audience: Primary school learners (Ages 7-12)
+Genre: Educational Puzzle Game (Tetris-based)
+Platform: PC, Mobile (touch-optimized)
+
+═══════════════════════════════════════════════════════════════════
+
+1. GAME OVERVIEW
+
+Chronicles of the Sun-Kings is an educational puzzle game that uses Tetris mechanics 
+as "Knowledge Duels" to unlock African historical content. Players progress through 
+levels, and upon reaching milestones, they unlock achievements that reveal stories 
+about ancient African civilizations.
+
+The game bridges entertainment and education by making historical learning the reward 
+for puzzle-solving mastery.
+
+═══════════════════════════════════════════════════════════════════
+
+2. CORE CONCEPT: TETRIS AS KNOWLEDGE RESTORATION
+
+The Metaphor:
+- Falling blocks = Scattered fragments of history
+- Clearing lines = Organizing and restoring knowledge
+- Level progression = Journey across the African continent
+- Achievements = Recovered pieces of the Sun-Scrolls
+
+This creates a meaningful connection between gameplay and narrative: players are 
+literally "putting the pieces together" to restore lost history.
+
+═══════════════════════════════════════════════════════════════════
+
+3. GAME MODES
+
+STORY MODE
+- Tetris gameplay with achievement system active
+- Unlocks historical content at level milestones
+- Three main quests + master achievement
+- Educational narrative integrated into progression
+
+CLASSIC MODE
+- Pure Tetris experience
+- No story elements or achievements
+- For players who want traditional gameplay
+- Scoring and level system still active
+
+═══════════════════════════════════════════════════════════════════
+
+4. PROGRESSION SYSTEM
+
+LEVEL STRUCTURE
+- Every 10 lines cleared = 1 level gained
+- Levels 0-30 span the three main quests
+- Speed increases with level (classic Tetris progression)
+- Highest level reached is saved
+
+SCORING SYSTEM (Classic Tetris Rules)
+- Single line: 40 × (level + 1)
+- Double (2 lines): 100 × (level + 1)
+- Triple (3 lines): 300 × (level + 1)
+- Tetris (4 lines): 1200 × (level + 1)
+
+═══════════════════════════════════════════════════════════════════
+
+5. ACHIEVEMENT SYSTEM: THE THREE QUESTS
+
+QUEST 1: The Golden Courts of Wagadugu (Levels 0-10)
+Unlock Requirement: Reach Level 10
+Historical Theme: Trade and Commerce in West Africa
+Educational Content:
+- The Ghana Empire and trans-Saharan trade routes
+- Gold and salt trade economics
+- The concept of fair exchange in African markets
+- Cultural significance of Wagadugu (Ouagadougou)
+
+QUEST 2: The Libraries of the North (Levels 11-20)
+Unlock Requirement: Reach Level 20
+Historical Theme: Mathematics, Architecture, and Scholarship
+Educational Content:
+- Ancient Egyptian mathematics and pyramid construction
+- The Library of Alexandria and African scholarship
+- Timbuktu's universities and manuscript tradition
+- Astronomical knowledge in ancient Africa
+
+QUEST 3: The Stone Fortresses of the South (Levels 21-30)
+Unlock Requirement: Reach Level 30
+Historical Theme: Engineering and Unity
+Educational Content:
+- Great Zimbabwe's stone architecture
+- Engineering techniques without mortar
+- The Kingdom of Zimbabwe and its trade networks
+- Symbolism of walls representing community strength
+
+MASTER ACHIEVEMENT: The Sankofa Bird
+Unlock Requirement: Complete all three quests
+Meaning: "It is not taboo to go back for what you have forgotten"
+Reward: Full restoration of the Sun-Scrolls
+Represents: Mastery of both gameplay and historical knowledge
+
+═══════════════════════════════════════════════════════════════════
+
+6. THE STORY: THE SHATTERED ECLIPSE
+
+PROLOGUE
+For thousands of years, the history of the African continent was protected by the 
+Sun-Kings. They held their power not in swords, but in the "Sun-Scrolls" - a 
+collection of every innovation, proverb, and trade secret from North to South. 
+This knowledge was kept in a magical golden jar, guarded by the Great Shaman, Muzu.
+
+THE GREAT FORGETTING
+A shadow known as "The Eclipse" grew jealous of this light. It shattered the golden 
+jar, scattering the history of the continent to the winds. People forgot how to 
+trade fairly in the West, how to build great stone walls in the South, and how to 
+read the stars in the North. The world began to lose its color, turning grey and 
+silent.
+
+THE HERO'S JOURNEY
+You play as a young apprentice Griot - the only one who can still see the faint 
+"glimmer" of lost history. Muzu, now a spirit guide trapped within the jar's 
+fragments, calls out to you. He gives you the Griot's Compass, which points toward 
+lost knowledge.
+
+THE RESTORATION
+Through mastering the art of organization (Tetris), you prove your ability to 
+restore order from chaos. Each level you conquer brings back a piece of history. 
+Each achievement unlocked restores color to a region of the continent.
+
+Your journey ends when you reassemble the Sun-Scrolls and earn the Sankofa Bird, 
+proving that "it is not taboo to go back for what you have forgotten."
+
+═══════════════════════════════════════════════════════════════════
+
+7. USER INTERFACE & EXPERIENCE
+
+MAIN MENU
+- Splash screen: "Chronicles of the Sun Kings by Leti Arts Internship Team 5"
+- Options: Start Game, Achievements, Exit Game
+
+MODE SELECTION
+- Story Mode: Play with achievements and narrative
+- Classic Mode: Pure Tetris gameplay
+- Back button to return to main menu
+
+IN-GAME HUD
+- Score display (top right panel)
+- Lines cleared counter
+- Current level indicator
+- Next piece preview (top right)
+- Game Over screen with New Game and Main Menu buttons
+
+ACHIEVEMENTS SCREEN
+- Progress tracker (X/4 completed, percentage)
+- Checkbox list of all achievements
+- Achievement names and descriptions
+- Level requirements displayed
+- Back button to main menu
+
+ACHIEVEMENT NOTIFICATIONS
+- Gold-colored popup when achievement unlocked
+- Displays achievement name
+- Appears for 3 seconds with fade-out
+- Non-intrusive, doesn't pause gameplay
+
+═══════════════════════════════════════════════════════════════════
+
+8. EDUCATIONAL OBJECTIVES
+
+PRIMARY LEARNING GOALS
+• Historical Awareness: Introduce students to major African civilizations
+• Geography: Connect historical events to specific African regions
+• Cultural Appreciation: Highlight African innovations and achievements
+• Critical Thinking: Understand cause-and-effect in historical contexts
+
+PEDAGOGICAL APPROACH
+• Reward-based learning: History content as achievement rewards
+• Progressive difficulty: Matches cognitive development
+• Repetition through gameplay: Reinforces learning through practice
+• Self-paced: Students progress at their own speed
+
+THE SANKOFA PHILOSOPHY
+"It is not taboo to go back for what you have forgotten"
+- Encourages reviewing learned material
+- Removes shame from asking questions or revisiting content
+- Promotes iterative learning and mastery
+- Culturally grounded in Akan wisdom
+
+═══════════════════════════════════════════════════════════════════
+
+9. TECHNICAL IMPLEMENTATION
+
+ENGINE: Godot 4.6
+LANGUAGE: GDScript
+RESOLUTION: 720×950 (portrait orientation for mobile)
+
+KEY SYSTEMS
+- Achievement Manager (Singleton/Autoload)
+- Save/Load system for progress persistence
+- Scene management (Splash → Menu → Mode Select → Game)
+- Level-based difficulty scaling
+- Score calculation system
+
+DATA PERSISTENCE
+- Achievements saved to user://achievements.save
+- Tracks: unlocked achievements, highest level reached
+- Automatic save on achievement unlock
+- Load on game start
+
+═══════════════════════════════════════════════════════════════════
+
+10. FUTURE ENHANCEMENTS (Post-MVP)
+
+NARRATIVE EXPANSION
+- Cutscenes or dialogue boxes when achievements unlock
+- Detailed historical text for each achievement
+- Character art for Griot and Muzu
+- Animated Sankofa Bird reveal
+
+VISUAL THEMING
+- Region-specific backgrounds (Sahara, Nile, Zimbabwe)
+- Themed tetromino designs per quest
+- Color palette changes per achievement tier
+- African pattern overlays (Kente, Adinkra, etc.)
+
+AUDIO DESIGN
+- Regional African music per quest
+- Kora for West Africa, Mbira for Southern Africa
+- Sound effects for achievement unlocks
+- Voiceover narration by Muzu (accessibility)
+
+GAMEPLAY VARIATIONS
+- Different challenge types per quest (score, survival, combos)
+- Special tetromino shapes based on African symbols
+- Power-ups themed around historical innovations
+- Multiplayer mode for classroom competition
+
+EXTENDED CONTENT
+- More quests covering additional regions
+- East Africa (Swahili Coast, Ethiopia)
+- Central Africa (Kongo Kingdom)
+- North Africa (Carthage, Nubia)
+- Bonus achievements for deeper exploration
+
+═══════════════════════════════════════════════════════════════════
+
+11. SUCCESS METRICS
+
+ENGAGEMENT
+- Average play session length
+- Achievement completion rate
+- Story Mode vs Classic Mode preference
+- Return player rate
+
+EDUCATIONAL IMPACT
+- Pre/post knowledge assessment
+- Student feedback on historical content
+- Teacher evaluation of learning outcomes
+- Content retention over time
+
+TECHNICAL PERFORMANCE
+- Load times
+- Frame rate stability
+- Save/load reliability
+- Cross-platform compatibility
+
+═══════════════════════════════════════════════════════════════════
+
+12. DEVELOPMENT ROADMAP
+
+PHASE 1: CORE MECHANICS ✓ COMPLETE
+- Tetris gameplay implementation
+- Scoring and level system
+- Basic UI/UX
+
+PHASE 2: NARRATIVE FRAMEWORK ✓ COMPLETE
+- Achievement system
+- Story mode vs Classic mode
+- Progress tracking and persistence
+- Main menu and navigation
+
+PHASE 3: CONTENT CREATION (CURRENT)
+- Write detailed historical content for each achievement
+- Design achievement unlock screens
+- Create visual assets (backgrounds, character art)
+- Implement notification system
+
+PHASE 4: POLISH & TESTING
+- Playtesting with target audience
+- Balance difficulty curve
+- Bug fixes and optimization
+- Accessibility features
+
+PHASE 5: LAUNCH & ITERATION
+- Release to target schools/platforms
+- Gather feedback
+- Iterate based on educational outcomes
+- Plan expansion content
+
+═══════════════════════════════════════════════════════════════════
+
+CONCLUSION
+
+Chronicles of the Sun-Kings successfully bridges the gap between entertainment and 
+education by using Tetris as a metaphor for restoring scattered history. The 
+achievement-based progression creates clear goals while the Sankofa philosophy 
+encourages iterative learning.
+
+The reduced scope makes the project achievable while maintaining educational value. 
+The foundation is solid for future expansion into a more comprehensive educational 
+experience.
+
+═══════════════════════════════════════════════════════════════════

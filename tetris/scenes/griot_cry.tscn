@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cgfxw2uyui26a"]
+
+[ext_resource type="Texture2D" uid="uid://2atquxs7bvtj" path="res://assets/Untitled_Artwork 1.png" id="1_7wv7h"]
+[ext_resource type="Texture2D" uid="uid://bdkkegbaas8io" path="res://assets/IMG_9911.PNG" id="2_p8n83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sfn4t"]
+atlas = ExtResource("1_7wv7h")
+region = Rect2(0, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwxs2"]
+atlas = ExtResource("1_7wv7h")
+region = Rect2(224, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eddgn"]
+atlas = ExtResource("1_7wv7h")
+region = Rect2(448, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4udtx"]
+atlas = ExtResource("1_7wv7h")
+region = Rect2(672, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njp2r"]
+atlas = ExtResource("2_p8n83")
+region = Rect2(0, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8p5j"]
+atlas = ExtResource("2_p8n83")
+region = Rect2(224, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hpi6"]
+atlas = ExtResource("2_p8n83")
+region = Rect2(448, 0, 224, 224)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx4at"]
+atlas = ExtResource("2_p8n83")
+region = Rect2(672, 0, 224, 224)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w3six"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sfn4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dwxs2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eddgn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4udtx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njp2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8p5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hpi6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx4at")
+}],
+"loop": true,
+"name": &"game_over_cry",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eih2n"]
+radius = 51.24451
+
+[node name="griot_cry" type="CharacterBody2D" unique_id=566828261]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=829678435]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_w3six")
+animation = &"game_over_cry"
+autoplay = "game_over_cry"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1347529774]
+position = Vector2(-20, 33)
+shape = SubResource("CircleShape2D_eih2n")
