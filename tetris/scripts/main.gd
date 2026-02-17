@@ -230,6 +230,7 @@ func next_tetromino_preview() -> void:
 func check_rows() -> void:
 	var row: int = rows
 	var rows_cleared_this_time: int = 0
+	var rows_to_clear: Array = []
 	
 	while row > 0:
 		var cells_finished:= 0
@@ -237,12 +238,22 @@ func check_rows() -> void:
 			if not is_within_bounds( Vector2i( i +1, row )):
 				cells_finished += 1
 		if cells_finished == columns:
-			shift_rows( row )
+			rows_to_clear.append(row)
 			rows_cleared_this_time += 1
+			row -= 1
 		else: 
 			row -= 1
 	
 	if rows_cleared_this_time > 0:
+		# Check if it's a Tetris (4 lines)
+		if rows_cleared_this_time == 4:
+			# Blink animation for Tetris
+			await blink_rows(rows_to_clear)
+		
+		# Clear the rows
+		for cleared_row in rows_to_clear:
+			shift_rows(cleared_row)
+		
 		lines_cleared += rows_cleared_this_time
 		score += calculate_score(rows_cleared_this_time)
 		update_level()
@@ -250,6 +261,38 @@ func check_rows() -> void:
 		
 		# Play line clear sound effect
 		AudioManager.play_line_clear_sfx()
+
+func blink_rows(rows_to_blink: Array) -> void:
+	var blink_count = 3
+	var blink_duration = 0.1
+	
+	# Store original cell data
+	var original_cells = {}
+	for row in rows_to_blink:
+		for col in range(columns):
+			var cell_pos = Vector2i(col + 1, row)
+			var atlas = board.get_cell_atlas_coords(cell_pos)
+			original_cells[cell_pos] = atlas
+	
+	for blink in range(blink_count):
+		# Hide rows (erase cells)
+		for row in rows_to_blink:
+			for col in range(columns):
+				var cell_pos = Vector2i(col + 1, row)
+				board.erase_cell(cell_pos)
+		
+		await get_tree().create_timer(blink_duration).timeout
+		
+		# Show rows with original colors
+		for row in rows_to_blink:
+			for col in range(columns):
+				var cell_pos = Vector2i(col + 1, row)
+				if original_cells.has(cell_pos):
+					var atlas = original_cells[cell_pos]
+					if atlas != Vector2i(-1, -1):
+						board.set_cell(cell_pos, title_id, atlas)
+		
+		await get_tree().create_timer(blink_duration).timeout
 
 func shift_rows(row) -> void:
 	var atlas: Vector2i
@@ -340,8 +383,8 @@ func update_level() -> void:
 	if new_level != level:
 		level = new_level
 		
-		# Check if story mode is complete (reached level 6)
-		if is_story_mode and level >= 6:
+		# Check if story mode is complete (reached level 5)
+		if is_story_mode and level >= 5:
 			# Story mode complete! Show victory screen
 			get_tree().change_scene_to_file("res://scenes/story_complete.tscn")
 			return

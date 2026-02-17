@@ -66,3 +66,9 @@ theme_override_colors/font_color = Color(1, 0.8, 0, 1)
 text = "\"It is not taboo to go back
 for what you have forgotten.\""
 horizontal_alignment = 1
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 18
+text = "EXIT"
