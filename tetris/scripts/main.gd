@@ -79,7 +79,8 @@ var next_piece_atlas : Vector2i
 var score : int
 var level: int = 0
 var lines_cleared: int = 0
-var is_game_running: bool 
+var is_game_running: bool
+var is_story_mode: bool = false  # Track if playing story mode 
 
 @onready var board: TileMapLayer = $board
 @onready var active: TileMapLayer = $active
@@ -87,6 +88,15 @@ var is_game_running: bool
 func _ready() -> void:
 	$game_hud/end_panel/new_game_button.pressed.connect( start_new_game )
 	$game_hud/end_panel/main_menu_button.pressed.connect( _on_main_menu_pressed )
+	
+	# Check if we're in story mode
+	if get_tree().root.has_meta("is_story_mode"):
+		is_story_mode = get_tree().root.get_meta("is_story_mode")
+	
+	# Update button text for story mode
+	if is_story_mode:
+		$game_hud/end_panel/new_game_button.text = "RETRY LEVEL"
+	
 	start_new_game()
 	$game_hud/end_panel.visible = false
 	$game_hud/griot_cry.visible = false
@@ -94,10 +104,31 @@ func _ready() -> void:
 
 
 func start_new_game() -> void:
+	var saved_level = level
+	var saved_score = score
+	var saved_lines = lines_cleared
+	
 	score = 0
 	level = 0
 	lines_cleared = 0
 	is_game_running = true
+	
+	# Load saved progress if in story mode
+	if is_story_mode:
+		if get_tree().root.has_meta("story_progress_data"):
+			# Loading from save
+			var progress = get_tree().root.get_meta("story_progress_data")
+			get_tree().root.remove_meta("story_progress_data")
+			
+			if progress.has("level"):
+				level = progress.level
+				lines_cleared = progress.lines_cleared
+				score = progress.score
+		else:
+			# Retrying current level (after game over)
+			level = saved_level
+			lines_cleared = saved_lines
+			score = saved_score
 	
 	$game_hud/end_panel.visible = false
 	
@@ -272,6 +303,10 @@ func is_game_over() -> void:
 			land_tetromino()
 			$game_hud/end_panel.visible = true
 			
+			# Save story progress if in story mode
+			if is_story_mode:
+				AchievementManager.save_story_progress(level, score, lines_cleared)
+			
 			# Hide normal Griot and show crying Griot
 			$game_hud/griot.visible = false
 			$game_hud/griot_cry.visible = true
@@ -305,13 +340,20 @@ func update_level() -> void:
 	if new_level != level:
 		level = new_level
 		
+		# Check if story mode is complete (reached level 6)
+		if is_story_mode and level >= 6:
+			# Story mode complete! Show victory screen
+			get_tree().change_scene_to_file("res://scenes/story_complete.tscn")
+			return
+		
 		# Play level up sound effect
 		AudioManager.play_level_up_sfx()
 		
-		# Check for achievement unlocks
-		var unlocked = AchievementManager.check_and_unlock_achievements(level)
-		for achievement in unlocked:
-			show_achievement_notification(achievement)
+		# Check for achievement unlocks (Story Mode only)
+		if is_story_mode:
+			var unlocked = AchievementManager.check_and_unlock_achievements(level)
+			for achievement in unlocked:
+				show_achievement_notification(achievement)
 
 # Get fall speed based on current level
 func get_fall_speed() -> float:

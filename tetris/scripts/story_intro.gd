@@ -20,6 +20,14 @@ func update_progress_display() -> void:
 		progress_text.modulate = Color(0.8, 0.8, 0.8, 1)  # Grey
 
 func _on_start_pressed() -> void:
+	# Set story mode flag before starting game
+	get_tree().root.set_meta("is_story_mode", true)
+	
+	# Check if loading saved progress
+	if get_tree().root.has_meta("load_story_progress"):
+		get_tree().root.set_meta("load_story_progress", false)
+		get_tree().root.set_meta("story_progress_data", AchievementManager.load_story_progress())
+	
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
 
 func _on_back_pressed() -> void:

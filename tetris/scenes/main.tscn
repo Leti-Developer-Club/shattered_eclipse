@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://ckqnm2hhae50e" path="res://scripts/grid_overlay.gd" id="5_grid"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://d34j6bnhwbn0k" path="res://assets/tetrominoes2.png" id="7_o6xl0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("2_0wfyh")
@@ -39,6 +40,22 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_sugp2")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tipki"]
+texture = ExtResource("7_o6xl0")
+texture_region_size = Vector2i(32, 31)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_85g3d"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_tipki")
+
 [node name="Node2D" type="Node2D" unique_id=1246962202]
 script = ExtResource("1_o5qli")
 
@@ -68,3 +85,7 @@ modulate = Color(1, 1, 1, 0.43137255)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1924644600]
+visible = false
+tile_set = SubResource("TileSet_85g3d")

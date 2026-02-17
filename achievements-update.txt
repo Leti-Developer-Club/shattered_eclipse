@@ -1,0 +1,152 @@
+ACHIEVEMENTS UPDATE - STORY MODE RESTRUCTURE
+==============================================
+
+NEW STORY MODE STRUCTURE
+------------------------
+Story Mode now has 6 levels (0-5) with cultural/historical achievements:
+
+LEVEL 0: Tutorial/Warm-up
+- Requirement: Clear 3 lines
+- Purpose: Introduction to gameplay
+- No achievement unlock
+
+LEVEL 1: Anufo Tribe (Smithing Village)
+- Requirement: Reach Level 1 (10 lines cleared)
+- Achievement: "The Anufo Smiths"
+- Location: Dapaong and Mango areas (Togo/Ghana)
+- Content: 3 pages about Anufo history, warfare, and royal lineage
+
+LEVEL 2: Ashanti Kingdom
+- Requirement: Reach Level 2 (20 lines cleared)
+- Achievement: "The Golden Stool"
+- Location: Kumasi, Ashanti Region (Ghana)
+- Content: 3 pages about Ashanti empire, Golden Stool, and spiritual beliefs
+
+LEVEL 3: The Ga Tribe
+- Requirement: Reach Level 3 (30 lines cleared)
+- Achievement: "Homowo Festival"
+- Location: Accra region (Ghana)
+- Content: 3 pages about Ga migration, Homowo Festival, and 20th century history
+
+LEVEL 4: The Fante (Coastal Region)
+- Requirement: Reach Level 4 (40 lines cleared)
+- Achievement: "Fetu Afahye"
+- Location: Cape Coast, Central coastal Ghana
+- Content: 3 pages about Fante confederacy, traditional food, and Fetu Afahye Festival
+
+LEVEL 5: The Sankofa Bird (Master Achievement)
+- Requirement: Reach Level 5 (50 lines cleared)
+- Achievement: "The Sankofa Bird - Master of Chronicles"
+- Purpose: Final level to prove mastery
+- Unlocks when all 4 tribal achievements are completed
+
+==============================================
+
+ACHIEVEMENT DETAILS
+-------------------
+
+1. THE ANUFO SMITHS (Level 1)
+   Pages:
+   - Page 1: Origin and identity - Anufo/Chakosi people from Anou on Komoé River
+   - Page 2: Warfare tactics - Messenger system with pellets (war) or corn (peace)
+   - Page 3: Royal lineage - Na/Nam prefix, Biemah and Somah commanders, royal gates
+
+2. THE GOLDEN STOOL (Level 2)
+   Pages:
+   - Page 1: Ashanti people - 4.7M population, major Akan ethnic group
+   - Page 2: Empire history - 17th century rise, Kumasi capital, gold trade dominance
+   - Page 3: Golden Stool & spirituality - Sacred symbol, Nyame worship, ancestor reverence
+
+3. HOMOWO FESTIVAL (Level 3)
+   Pages:
+   - Page 1: Migration history - From Lake Chad through Niger basin to Ghana
+   - Page 2: Cultural identity - Homowo Festival, matrilineal/patrilineal descent
+   - Page 3: 20th century challenges - Disasters, earthquakes, plague, emigration
+
+4. FETU AFAHYE (Level 4)
+   Pages:
+   - Page 1: Fante identity - Coastal Akan, confederacy vs Ashanti, Mankessim capital
+   - Page 2: Traditional food - Kenkey, Banku, seafood, yam harvest origins
+   - Page 3: Fetu Afahye Festival - Disease remembrance, cleanliness, epidemic prevention
+
+5. THE SANKOFA BIRD (Level 5)
+   Master Achievement - Unlocked by completing all 4 tribal achievements
+   Represents: "It is not taboo to go back for what you have forgotten"
+   Meaning: Full restoration of the Sun-Scrolls and mastery of African history
+
+==============================================
+
+MUZU DIALOGUE SYSTEM
+--------------------
+
+Map 1 - Anufo Tribe:
+- Entry: "This is the smithing village of the Anufo tribe. Discover the hidden pages 
+  to learn about their lifestyle so they aren't forgotten, but know that won't be an 
+  easy task."
+- After Boss: "Whew! That was exciting! Anufo really had their hands full with this one."
+
+Map 2 - Ashanti Kingdom:
+- Entry: "The Ashanti tribe, one of the most common and prolific tribes in Ghana. 
+  Let's do our best to discover their rich history."
+
+Map 3 - Ga Tribe:
+- Entry: [To be defined]
+
+Map 4 - Fante:
+- Entry: [To be defined]
+
+Map 5 - Sankofa Bird:
+- Entry: [To be defined - Final challenge message]
+
+==============================================
+
+IMPLEMENTATION NOTES
+--------------------
+
+Current System (Classic Mode):
+- Level 10: Golden Courts of Wagadugu
+- Level 20: Libraries of the North
+- Level 30: Stone Fortresses of the South
+- Level 30+: Sankofa Bird (all 3 complete)
+
+New System (Story Mode):
+- Level 1 (10 lines): Anufo Tribe
+- Level 2 (20 lines): Ashanti Kingdom
+- Level 3 (30 lines): Ga Tribe
+- Level 4 (40 lines): Fante
+- Level 5 (50 lines): Sankofa Bird
+
+Changes Needed:
+1. Update AchievementManager with new achievement structure
+2. Create story mode flag to use different achievement set
+3. Add Muzu dialogue system for story progression
+4. Create page/content display system for unlocked achievements
+5. Add level 0 tutorial with 3-line requirement
+6. Separate Classic Mode (original 3 achievements) from Story Mode (4 tribal + Sankofa)
+
+==============================================
+
+EDUCATIONAL CONTENT SUMMARY
+---------------------------
+
+Anufo Tribe:
+- Geography: Togo/Ghana border region
+- Key Themes: Warfare, diplomacy, royal succession
+- Cultural Elements: Military commanders, messenger system
+
+Ashanti Kingdom:
+- Geography: Central Ghana (Kumasi)
+- Key Themes: Empire building, trade, spirituality
+- Cultural Elements: Golden Stool, Nyame worship
+
+Ga Tribe:
+- Geography: Greater Accra region
+- Key Themes: Migration, resilience, social structure
+- Cultural Elements: Homowo Festival, dual descent system
+
+Fante People:
+- Geography: Central coastal Ghana
+- Key Themes: Maritime culture, resistance, festivals
+- Cultural Elements: Fishing traditions, Fetu Afahye
+
+==============================================
