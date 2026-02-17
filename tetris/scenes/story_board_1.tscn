@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://d01eqykmali77"]
 
+[ext_resource type="Script" uid="uid://d7hvom0w4fft" path="res://scripts/story_board1.gd" id="1_dehja"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_xalrx"]
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_853bu"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_hfr2g"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dehja")
 
 [node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
 position = Vector2(348, 220.00002)
@@ -32,10 +34,10 @@ texture = ExtResource("3_hfr2g")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
 layout_mode = 0
-offset_left = 224.0
-offset_top = 246.0
-offset_right = 431.0
-offset_bottom = 402.0
+offset_left = 211.0
+offset_top = 209.0
+offset_right = 418.0
+offset_bottom = 365.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
 theme_override_fonts/font = ExtResource("4_l72pi")
 text = "Welcome, Young Griot, I'm Muzu, your Spirit Guide. 
@@ -44,11 +46,20 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Button" type="Button" parent="." unique_id=78404916]
+[node name="next_button" type="Button" parent="." unique_id=78404916]
 layout_mode = 0
-offset_left = 288.0
+offset_left = 344.0
 offset_top = 483.0
-offset_right = 333.0
+offset_right = 394.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_snitl")
 text = "Next"
+
+[node name="back_button" type="Button" parent="." unique_id=1100157525]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 483.0
+offset_right = 266.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_snitl")
+text = "Back"

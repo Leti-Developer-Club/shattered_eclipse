@@ -330,7 +330,7 @@ func is_valid_rotation() -> bool:
 	return true
 	
 func is_within_bounds( pos: Vector2i ) -> bool:
-	if pos.x < 0 or pos.x >= columns + 1 or pos.y < 0 or pos.y >= rows + 1:
+	if pos.x < 1 or pos.x > columns or pos.y < 1 or pos.y > rows:
 		return false
 	
 	var tile_id = board.get_cell_source_id( pos )

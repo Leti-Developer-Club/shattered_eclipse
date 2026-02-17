@@ -3,13 +3,11 @@
 [ext_resource type="Script" uid="uid://dyr23t4hskffq" path="res://scripts/main.gd" id="1_o5qli"]
 [ext_resource type="Texture2D" uid="uid://ps50ginsdsn2" path="res://assets/tetrominoes3.png" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://cr72adhvxfaku" path="res://scenes/game_hud.tscn" id="3_sugp2"]
-[ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://ckqnm2hhae50e" path="res://scripts/grid_overlay.gd" id="5_grid"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="6_tefeu"]
-[ext_resource type="Texture2D" uid="uid://ch1ci78t55pjy" path="res://assets/masks/small-removebg-preview.png" id="7_choun"]
 [ext_resource type="Texture2D" uid="uid://c3mb6r842k8wc" path="res://assets/backgrounds/photo_2026-02-17_14-29-02.jpg" id="8_85g3d"]
 [ext_resource type="Texture2D" uid="uid://qa4p2we77o2p" path="res://assets/backgrounds/photo_2026-02-17_14-29-11.jpg" id="9_choun"]
-[ext_resource type="Texture2D" uid="uid://ts7hr0rs1o17" path="res://assets/book-page.png" id="10_choun"]
+[ext_resource type="Texture2D" uid="uid://dw5hs1hfh6b6a" path="res://assets/savanah/photo_2026-02-17_18-13-59.jpg" id="11_ya4ey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb6dy"]
 texture = ExtResource("2_choun")
@@ -67,18 +65,6 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_ya4ey")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_choun"]
-texture = ExtResource("7_choun")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_ya4ey"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_choun")
-
 [node name="Node2D" type="Node2D" unique_id=1246962202]
 script = ExtResource("1_o5qli")
 
@@ -95,29 +81,11 @@ script = ExtResource("5_grid")
 
 [node name="game_hud" parent="." unique_id=1317898753 instance=ExtResource("3_sugp2")]
 
-[node name="AshantiKingdom2" type="Sprite2D" parent="." unique_id=545180995]
-visible = false
-modulate = Color(1, 1, 1, 0.6313726)
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(190.99998, 351.00003)
-scale = Vector2(6.359999, 12.800001)
-texture = ExtResource("4_jyhfs")
-
 [node name="Background_lv1" type="Sprite2D" parent="." unique_id=1562819371]
 modulate = Color(1, 1, 1, 0.43137255)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
-
-[node name="Sprite2D" type="Sprite2D" parent="Background_lv1" unique_id=259259446]
-visible = false
-texture_filter = 1
-position = Vector2(-153.25, 115.000015)
-scale = Vector2(12.660001, 21.2)
-texture = ExtResource("7_choun")
-region_enabled = true
-region_rect = Rect2(0, 0, 25, 30)
 
 [node name="Background_lv4" type="Sprite2D" parent="." unique_id=752849792]
 show_behind_parent = true
@@ -131,20 +99,15 @@ position = Vector2(354.5, 387.5)
 scale = Vector2(1.0180556, 0.67109376)
 texture = ExtResource("9_choun")
 
-[node name="Background_lv2" type="Sprite2D" parent="." unique_id=388542482]
-self_modulate = Color(1, 1, 1, 0.80784315)
-show_behind_parent = true
-position = Vector2(360.00003, 379.49997)
-scale = Vector2(1.5009825, 1.0409293)
-texture = ExtResource("10_choun")
-
 [node name="Background_lv5" type="Sprite2D" parent="." unique_id=1188095339]
 modulate = Color(1, 1, 1, 0.43137255)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
 
-[node name="masku" type="TileMapLayer" parent="." unique_id=1726636316]
-visible = false
-tile_map_data = PackedByteArray("AAACAAAAAAAAAAAAAAADAAAAAAABAAAAAAAEAAAAAAACAAAAAAAFAAAAAAADAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAABAAAAAAAIAAAAAAACAAAAAAAJAAAAAAADAAAAAAACABUAAAAAAAAAAAADABUAAAABAAAAAAAEABUAAAACAAAAAAAFABUAAAADAAAAAAAGABUAAAAAAAAAAAAHABUAAAAAAAAAAAAIABUAAAACAAAAAAAJABUAAAADAAAAAAA=")
-tile_set = SubResource("TileSet_ya4ey")
+[node name="Background_lv2" type="Sprite2D" parent="." unique_id=1238502729]
+self_modulate = Color(1, 1, 1, 0.88235295)
+show_behind_parent = true
+position = Vector2(359.5, 352.49997)
+scale = Vector2(1.0180556, 0.6398437)
+texture = ExtResource("11_ya4ey")
