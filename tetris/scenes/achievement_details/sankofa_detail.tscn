@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://cvm05vmn7tlru"]
+
+[ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
+[ext_resource type="Script" uid="uid://cmtatoc5tokwn" path="res://scripts/achievement_details/sankofa_detail.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="4_llj1c"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_nb1t1"]
+
+[node name="SankofaDetail" type="Control" unique_id=1207833379]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1338955067]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="BookSprite" type="Sprite2D" parent="." unique_id=75670100]
+self_modulate = Color(1, 1, 1, 0.47058824)
+position = Vector2(335, 357.99997)
+scale = Vector2(1.139948, 1.6143187)
+texture = ExtResource("1_book")
+
+[node name="LeftPage" type="VBoxContainer" parent="BookSprite" unique_id=437204858]
+offset_left = -203.51807
+offset_top = -170.96994
+offset_right = -3.5180664
+offset_bottom = 240.03006
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="BookSprite/LeftPage" unique_id=350561701]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+text = "The Sankofa Bird"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="BookSprite/LeftPage" unique_id=1484645659]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "The Sankofa symbol represents the Akan concept: 'Se wo were fi na wosankofa a yenkyi' - 'It is not taboo to go back and fetch what you forgot.' This wisdom teaches that we must look to the past to build a successful future."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="BookSprite/LeftPage" unique_id=1058087892]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "You have journeyed through the histories of the Anufo smiths, the Ashanti empire, the Ga migrations, and the Fante coastal traditions. Each piece of knowledge you've gathered represents a fragment of Africa's rich heritage that must never be forgotten."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="BookSprite" unique_id=75005863]
+offset_left = 14.035732
+offset_top = -130.08582
+offset_right = 214.03574
+offset_bottom = 169.91418
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="BookSprite/RightPage" unique_id=549303334]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "As a master Griot, you now carry the responsibility of preserving and sharing these stories. The Sun-Scrolls are restored, and the light of African history shines bright once more. Remember: learning from the past is not dwelling on it, but honoring it to create a better tomorrow."
+autowrap_mode = 3
+
+[node name="ContentContainer" type="VBoxContainer" parent="." unique_id=902175795]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = -123.0
+offset_right = 212.0
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="ContentContainer" unique_id=216374867]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "BACK"
+
+[node name="sankofa_bird" type="Sprite2D" parent="." unique_id=483227548]
+texture_filter = 1
+position = Vector2(450, 368)
+scale = Vector2(4.368, 4)
+texture = ExtResource("4_llj1c")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1578466412]
+show_behind_parent = true
+position = Vector2(341, 397)
+texture = ExtResource("5_nb1t1")

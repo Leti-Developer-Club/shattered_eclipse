@@ -82,12 +82,9 @@ func check_and_unlock_achievements(current_level: int) -> Array:
 			achievement.unlocked = true
 			newly_unlocked.append(achievement)
 	
-	# Check if all main achievements are unlocked for Sankofa Bird
+	# Check if Sankofa Bird should unlock at level 5
 	if not achievements.sankofa_bird.unlocked:
-		if achievements.anufo_tribe.unlocked and \
-		   achievements.ashanti_kingdom.unlocked and \
-		   achievements.ga_tribe.unlocked and \
-		   achievements.fante_people.unlocked:
+		if highest_level_reached >= achievements.sankofa_bird.level_requirement:
 			achievements.sankofa_bird.unlocked = true
 			newly_unlocked.append(achievements.sankofa_bird)
 	

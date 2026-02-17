@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://d01eqykmali77"]
+
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_xalrx"]
+[ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_853bu"]
+[ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_hfr2g"]
+[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_l72pi"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_snitl"]
+
+[node name="story_board1" type="Control" unique_id=1234526290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
+position = Vector2(348, 220.00002)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_xalrx")
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
+self_modulate = Color(1, 1, 1, 0.7058824)
+position = Vector2(318, 328)
+scale = Vector2(0.58687943, 0.54535013)
+texture = ExtResource("2_853bu")
+
+[node name="Muzu" type="Sprite2D" parent="." unique_id=348490815]
+position = Vector2(665, 509)
+scale = Vector2(0.9044118, 0.959695)
+texture = ExtResource("3_hfr2g")
+
+[node name="Label" type="Label" parent="." unique_id=1949926150]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 246.0
+offset_right = 431.0
+offset_bottom = 402.0
+theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
+theme_override_fonts/font = ExtResource("4_l72pi")
+text = "Welcome, Young Griot, I'm Muzu, your Spirit Guide. 
+Are you ready to begin your adventure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=78404916]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 483.0
+offset_right = 333.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_snitl")
+text = "Next"

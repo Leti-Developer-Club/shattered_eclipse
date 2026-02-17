@@ -138,6 +138,9 @@ func start_new_game() -> void:
 	
 	# Play gameplay music
 	AudioManager.play_gameplay_music()
+	
+	# Update background based on level
+	update_background()
 
 	update_hud()
 	clear_board()
@@ -245,10 +248,8 @@ func check_rows() -> void:
 			row -= 1
 	
 	if rows_cleared_this_time > 0:
-		# Check if it's a Tetris (4 lines)
-		if rows_cleared_this_time == 4:
-			# Blink animation for Tetris
-			await blink_rows(rows_to_clear)
+		# Blink animation for any line clear
+		await blink_rows(rows_to_clear)
 		
 		# Clear the rows
 		for cleared_row in rows_to_clear:
@@ -263,8 +264,8 @@ func check_rows() -> void:
 		AudioManager.play_line_clear_sfx()
 
 func blink_rows(rows_to_blink: Array) -> void:
-	var blink_count = 3
-	var blink_duration = 0.1
+	var blink_count = 2
+	var blink_duration = 0.05
 	
 	# Store original cell data
 	var original_cells = {}
@@ -383,6 +384,9 @@ func update_level() -> void:
 	if new_level != level:
 		level = new_level
 		
+		# Update background based on new level
+		update_background()
+		
 		# Check if story mode is complete (reached level 5)
 		if is_story_mode and level >= 5:
 			# Story mode complete! Show victory screen
@@ -397,6 +401,27 @@ func update_level() -> void:
 			var unlocked = AchievementManager.check_and_unlock_achievements(level)
 			for achievement in unlocked:
 				show_achievement_notification(achievement)
+
+# Update background visibility based on current level
+func update_background() -> void:
+	# Hide all backgrounds first
+	$Background_lv1.visible = false
+	$Background_lv2.visible = false
+	$Background_lv3.visible = false
+	$Background_lv4.visible = false
+	$Background_lv5.visible = false
+	
+	# Show the appropriate background based on level
+	if level == 0:
+		$Background_lv1.visible = true
+	elif level == 1:
+		$Background_lv2.visible = true
+	elif level == 2:
+		$Background_lv3.visible = true
+	elif level == 3:
+		$Background_lv4.visible = true
+	elif level >= 4:
+		$Background_lv5.visible = true
 
 # Get fall speed based on current level
 func get_fall_speed() -> float:
@@ -415,16 +440,20 @@ func update_hud() -> void:
 
 # Show achievement unlock notification
 func show_achievement_notification(achievement: Dictionary) -> void:
+	# Load Orbitron Black font
+	var orbitron_black = load("res://assets/Orbitron/static/Orbitron-Black.ttf")
+	
 	# Create a simple notification label
 	var notification = Label.new()
 	notification.text = "Achievement Unlocked!\n" + achievement.name
+	notification.add_theme_font_override("font", orbitron_black)
 	notification.add_theme_font_size_override("font_size", 24)
+	notification.add_theme_color_override("font_color", Color(0, 0, 0, 1))  # Black color
 	notification.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	notification.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	notification.modulate = Color(1, 0.8, 0, 1)  # Gold color
 	
 	# Position it in the center
-	notification.position = Vector2(360, 400)
+	notification.position = Vector2(2, 3)
 	notification.size = Vector2(400, 100)
 	notification.z_index = 100
 	
