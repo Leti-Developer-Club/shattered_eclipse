@@ -22,7 +22,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_xalrx")
 
 [node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
-self_modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(318, 328)
 scale = Vector2(0.58687943, 0.54535013)
 texture = ExtResource("2_853bu")
@@ -48,18 +48,18 @@ autowrap_mode = 2
 
 [node name="next_button" type="Button" parent="." unique_id=78404916]
 layout_mode = 0
-offset_left = 344.0
+offset_left = 360.0
 offset_top = 483.0
-offset_right = 394.0
+offset_right = 410.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_snitl")
 text = "Next"
 
 [node name="back_button" type="Button" parent="." unique_id=1100157525]
 layout_mode = 0
-offset_left = 216.0
+offset_left = 208.0
 offset_top = 483.0
-offset_right = 266.0
+offset_right = 262.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_snitl")
 text = "Back"

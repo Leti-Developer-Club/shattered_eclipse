@@ -9,7 +9,7 @@ clip_children = 1
 script = ExtResource("3_script")
 
 [node name="book" type="Sprite2D" parent="." unique_id=1097500014]
-self_modulate = Color(1, 1, 1, 0.47058824)
+self_modulate = Color(1, 1, 1, 0.78431374)
 position = Vector2(-14, -4)
 scale = Vector2(1.2426343, 1.6351038)
 texture = ExtResource("1_i0i8o")

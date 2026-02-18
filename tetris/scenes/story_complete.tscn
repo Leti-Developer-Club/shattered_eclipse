@@ -83,7 +83,7 @@ text = "EXIT"
 
 [node name="masks" type="Sprite2D" parent="." unique_id=372539169]
 texture_filter = 1
-position = Vector2(345, 92)
+position = Vector2(348, 110.00001)
 scale = Vector2(0.6791295, 0.54129463)
 texture = ExtResource("4_7pqba")
 

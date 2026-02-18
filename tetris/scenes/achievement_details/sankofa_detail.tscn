@@ -26,7 +26,7 @@ grow_vertical = 2
 color = Color(0.15, 0.15, 0.15, 1)
 
 [node name="BookSprite" type="Sprite2D" parent="." unique_id=75670100]
-self_modulate = Color(1, 1, 1, 0.47058824)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(335, 357.99997)
 scale = Vector2(1.139948, 1.6143187)
 texture = ExtResource("1_book")

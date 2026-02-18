@@ -387,41 +387,52 @@ func update_level() -> void:
 		# Update background based on new level
 		update_background()
 		
+		# Play level up sound effect
+		AudioManager.play_level_up_sfx()
+		
+		# Check for achievement unlocks (Story Mode only) - BEFORE checking for story complete
+		if is_story_mode:
+			var unlocked = AchievementManager.check_and_unlock_achievements(level)
+			for achievement in unlocked:
+				show_achievement_notification(achievement)
+		
 		# Check if story mode is complete (reached level 5)
 		if is_story_mode and level >= 5:
 			# Story mode complete! Show victory screen
 			get_tree().change_scene_to_file("res://scenes/story_complete.tscn")
 			return
-		
-		# Play level up sound effect
-		AudioManager.play_level_up_sfx()
-		
-		# Check for achievement unlocks (Story Mode only)
-		if is_story_mode:
-			var unlocked = AchievementManager.check_and_unlock_achievements(level)
-			for achievement in unlocked:
-				show_achievement_notification(achievement)
 
 # Update background visibility based on current level
 func update_background() -> void:
-	# Hide all backgrounds first
-	$Background_lv1.visible = false
-	$Background_lv2.visible = false
-	$Background_lv3.visible = false
-	$Background_lv4.visible = false
-	$Background_lv5.visible = false
+	# Determine which background should be visible
+	var target_background = null
 	
-	# Show the appropriate background based on level
 	if level == 0:
-		$Background_lv1.visible = true
+		target_background = $Background_lv1
 	elif level == 1:
-		$Background_lv2.visible = true
+		target_background = $Background_lv2
 	elif level == 2:
-		$Background_lv3.visible = true
+		target_background = $Background_lv3
 	elif level == 3:
-		$Background_lv4.visible = true
+		target_background = $Background_lv4
 	elif level >= 4:
-		$Background_lv5.visible = true
+		target_background = $Background_lv5
+	
+	# Fade out all backgrounds except the target
+	var backgrounds = [$Background_lv1, $Background_lv2, $Background_lv3, $Background_lv4, $Background_lv5]
+	
+	for bg in backgrounds:
+		if bg == target_background:
+			# Fade in the target background
+			bg.visible = true
+			var tween_in = create_tween()
+			tween_in.tween_property(bg, "modulate:a", 1.0, 1.0)
+		else:
+			# Fade out other backgrounds
+			if bg.visible:
+				var tween_out = create_tween()
+				tween_out.tween_property(bg, "modulate:a", 0.0, 1.0)
+				tween_out.tween_callback(func(): bg.visible = false)
 
 # Get fall speed based on current level
 func get_fall_speed() -> float:
@@ -445,7 +456,7 @@ func show_achievement_notification(achievement: Dictionary) -> void:
 	
 	# Create a simple notification label
 	var notification = Label.new()
-	notification.text = "Achievement Unlocked!\n" + achievement.name
+	notification.text = "Journal Unlocked!\n" + achievement.name
 	notification.add_theme_font_override("font", orbitron_black)
 	notification.add_theme_font_size_override("font_size", 24)
 	notification.add_theme_color_override("font_color", Color(0, 0, 0, 1))  # Black color

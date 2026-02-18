@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 	# Create left side title
 	var left_title = Label.new()
-	left_title.text = "ACHIEVEMENTS"
+	left_title.text = "JOURNAL"
 	left_title.add_theme_font_override("font", orbitron_font)
 	left_title.add_theme_color_override("font_color", Color(0, 0, 0, 1))
 	left_title.add_theme_font_size_override("font_size", 16)

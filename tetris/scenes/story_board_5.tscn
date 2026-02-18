@@ -22,7 +22,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_83c5o")
 
 [node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
-self_modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(318, 328)
 scale = Vector2(0.58687943, 0.54535013)
 texture = ExtResource("2_m06y7")
@@ -59,18 +59,18 @@ autowrap_mode = 2
 
 [node name="begin_quest" type="Button" parent="." unique_id=78404916]
 layout_mode = 0
-offset_left = 311.0
-offset_top = 499.0
-offset_right = 428.0
-offset_bottom = 530.0
+offset_left = 292.0
+offset_top = 492.0
+offset_right = 409.0
+offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
 text = "Begin Quest"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
 layout_mode = 0
-offset_left = 212.0
-offset_top = 501.0
-offset_right = 266.0
-offset_bottom = 532.0
+offset_left = 207.0
+offset_top = 492.0
+offset_right = 261.0
+offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
 text = "Back"

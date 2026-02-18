@@ -1,8 +1,8 @@
 extends Control
 
 func _ready() -> void:
-	# Play title music for victory
-	AudioManager.play_title_music()
+	# Play stage clear music for victory
+	AudioManager.play_stage_clear_music()
 	
 	# Connect exit button
 	$CenterContainer/VBoxContainer/ExitButton.pressed.connect(_on_exit_pressed)

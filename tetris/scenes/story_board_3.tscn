@@ -49,18 +49,18 @@ autowrap_mode = 2
 
 [node name="next_button" type="Button" parent="." unique_id=78404916]
 layout_mode = 0
-offset_left = 359.0
+offset_left = 358.0
 offset_top = 483.0
-offset_right = 409.0
+offset_right = 408.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_ex5gp")
 text = "Next"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
 layout_mode = 0
-offset_left = 238.0
+offset_left = 206.0
 offset_top = 483.0
-offset_right = 292.0
+offset_right = 260.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_ex5gp")
 text = "Back"

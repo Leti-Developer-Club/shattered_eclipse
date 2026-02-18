@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 AchievementManager="*res://scripts/achievement_manager.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+ButtonSoundHelper="*res://scripts/button_sound_helper.gd"
 
 [display]
 

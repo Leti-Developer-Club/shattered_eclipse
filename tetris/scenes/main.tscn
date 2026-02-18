@@ -82,31 +82,33 @@ script = ExtResource("5_grid")
 [node name="game_hud" parent="." unique_id=1317898753 instance=ExtResource("3_sugp2")]
 
 [node name="Background_lv1" type="Sprite2D" parent="." unique_id=1562819371]
-modulate = Color(1, 1, 1, 0.43137255)
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
 
 [node name="Background_lv4" type="Sprite2D" parent="." unique_id=752849792]
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(349.00003, 363)
 scale = Vector2(0.9944445, 0.60781246)
 texture = ExtResource("8_85g3d")
 
-[node name="Background_lv3" type="Sprite2D" parent="." unique_id=1768124975]
+[node name="Background_lv5" type="Sprite2D" parent="." unique_id=1768124975]
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(354.5, 387.5)
 scale = Vector2(1.0180556, 0.67109376)
 texture = ExtResource("9_choun")
 
-[node name="Background_lv5" type="Sprite2D" parent="." unique_id=1188095339]
-modulate = Color(1, 1, 1, 0.43137255)
+[node name="Background_lv2" type="Sprite2D" parent="." unique_id=1188095339]
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
 
-[node name="Background_lv2" type="Sprite2D" parent="." unique_id=1238502729]
-self_modulate = Color(1, 1, 1, 0.88235295)
+[node name="Background_lv3" type="Sprite2D" parent="." unique_id=1238502729]
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(359.5, 352.49997)
 scale = Vector2(1.0180556, 0.6398437)
