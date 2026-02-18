@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://ch45kxc1504vm"]
+
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_2mc34"]
+[ext_resource type="Script" uid="uid://dyaf3u34v0s28" path="res://scripts/story_board3.gd" id="1_ov7hf"]
+[ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_ov7hf"]
+[ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_pjj1p"]
+[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_0hisp"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_ex5gp"]
+
+[node name="story_board3" type="Control" unique_id=1234526290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ov7hf")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
+position = Vector2(348, 220.00002)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_2mc34")
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
+self_modulate = Color(1, 1, 1, 0.7058824)
+position = Vector2(318, 328)
+scale = Vector2(0.58687943, 0.54535013)
+texture = ExtResource("2_ov7hf")
+
+[node name="Muzu" type="Sprite2D" parent="." unique_id=348490815]
+position = Vector2(665, 509)
+scale = Vector2(0.9044118, 0.959695)
+texture = ExtResource("3_pjj1p")
+
+[node name="Label" type="Label" parent="." unique_id=1949926150]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 99.0
+offset_right = 446.0
+offset_bottom = 495.0
+theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
+theme_override_fonts/font = ExtResource("4_0hisp")
+theme_override_font_sizes/font_size = 14
+text = "This knowledge was kept in a magical golden jar, guarded by the Great Shaman, me, Muzu. 
+However, a shadow known as \"The Eclipse\" grew jealous of this light. It shattered the golden jar, scattering the history of the continent to the winds. People forgot how to trade fairly, how to build great stone walls, and how to read the stars. The world began to lose its color."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="next_button" type="Button" parent="." unique_id=78404916]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 483.0
+offset_right = 408.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_ex5gp")
+text = "Next"
+
+[node name="back" type="Button" parent="." unique_id=291816390]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 483.0
+offset_right = 260.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_ex5gp")
+text = "Back"

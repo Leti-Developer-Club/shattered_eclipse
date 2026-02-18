@@ -19,11 +19,13 @@ config/icon="res://icon.svg"
 
 AchievementManager="*res://scripts/achievement_manager.gd"
 AudioManager="*res://scripts/audio_manager.gd"
+ButtonSoundHelper="*res://scripts/button_sound_helper.gd"
 
 [display]
 
 window/size/viewport_width=700
 window/size/viewport_height=705
+window/stretch/mode="viewport"
 
 [physics]
 
@@ -34,4 +36,5 @@ window/size/viewport_height=705
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.15, 0.15, 0.15, 1)

@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bofh1sl2yp34g"]
+
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_83c5o"]
+[ext_resource type="Script" uid="uid://7sp2xnimergs" path="res://scripts/story_board5.gd" id="1_m06y7"]
+[ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_m06y7"]
+[ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_e8hkm"]
+[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_7oujr"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_f4cb1"]
+
+[node name="story_board5" type="Control" unique_id=1234526290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m06y7")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
+position = Vector2(348, 220.00002)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_83c5o")
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(318, 328)
+scale = Vector2(0.58687943, 0.54535013)
+texture = ExtResource("2_m06y7")
+
+[node name="Muzu" type="Sprite2D" parent="." unique_id=348490815]
+position = Vector2(665, 509)
+scale = Vector2(0.9044118, 0.959695)
+texture = ExtResource("3_e8hkm")
+
+[node name="Label" type="Label" parent="." unique_id=1949926150]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 33.0
+offset_right = 460.0
+offset_bottom = 599.0
+theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
+theme_override_fonts/font = ExtResource("4_7oujr")
+theme_override_font_sizes/font_size = 12
+text = "Your Quest: Restore the Sun-Scrolls
+
+* The Anufo Tribe
+Reach Level 1 to discover the smithing village of the Anufo tribe.
+* Ashanti Tribe
+Reach Level 2 to uncover the rich history of the Ashanti Kingdom.
+* The Ga Tribe
+Reach Level 3 to learn about the Ga people and their resilience.
+* The Fantes-Coastal Region
+Reach Level 4 to explore the coastal traditions of the Fante.
+* The Sankofa Bird
+Reach Level 5 to complete all quests and prove: \"It is not taboo to go back for what you have forgotten.\""
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="begin_quest" type="Button" parent="." unique_id=78404916]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 492.0
+offset_right = 409.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("5_f4cb1")
+text = "Begin Quest"
+
+[node name="back" type="Button" parent="." unique_id=291816390]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 492.0
+offset_right = 261.0
+offset_bottom = 523.0
+theme_override_fonts/font = ExtResource("5_f4cb1")
+text = "Back"

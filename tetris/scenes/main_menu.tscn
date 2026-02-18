@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://5crvbl7w8pdq"]
 
 [ext_resource type="Script" uid="uid://dnasyyn7happk" path="res://scripts/main_menu.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://fuhlij05r5ju" path="res://assets/PressStart2P-Regular.ttf" id="2_ekxnf"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_bqqt6"]
 [ext_resource type="Texture2D" uid="uid://bm34olxtefihs" path="res://assets/IMG_9916.PNG" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_wu84c"]
+[ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_8ln24"]
 
 [node name="MainMenu" type="Control" unique_id=1308398218]
 layout_mode = 3
@@ -33,7 +35,7 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=530212931]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 22
 
 [node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=7925966]
 custom_minimum_size = Vector2(0, 50)
@@ -42,26 +44,37 @@ layout_mode = 2
 [node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1674150492]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
 text = "Start Game"
 
 [node name="AchievementsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=315769507]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
 text = "Achievements"
 
 [node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1196826013]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_ekxnf")
+theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
 text = "Exit Game"
 
 [node name="Img9916" type="Sprite2D" parent="." unique_id=1145529670]
+visible = false
 show_behind_parent = true
 position = Vector2(350.99997, 356.5)
 scale = Vector2(0.78290206, 0.55859375)
 texture = ExtResource("3_bqqt6")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=2060330691]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.103)
+texture = ExtResource("4_wu84c")
+
+[node name="griot" parent="." unique_id=1787747308 instance=ExtResource("5_8ln24")]
+position = Vector2(688, 688)
+scale = Vector2(1.2, 1.2)

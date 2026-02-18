@@ -13,7 +13,7 @@ func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/mode_select.tscn")
 
 func _on_achievements_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/achievements_screen.tscn")
+	get_tree().change_scene_to_file("res://scenes/achievement_book.tscn")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

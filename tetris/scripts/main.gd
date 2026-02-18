@@ -79,7 +79,8 @@ var next_piece_atlas : Vector2i
 var score : int
 var level: int = 0
 var lines_cleared: int = 0
-var is_game_running: bool 
+var is_game_running: bool
+var is_story_mode: bool = false  # Track if playing story mode 
 
 @onready var board: TileMapLayer = $board
 @onready var active: TileMapLayer = $active
@@ -87,6 +88,15 @@ var is_game_running: bool
 func _ready() -> void:
 	$game_hud/end_panel/new_game_button.pressed.connect( start_new_game )
 	$game_hud/end_panel/main_menu_button.pressed.connect( _on_main_menu_pressed )
+	
+	# Check if we're in story mode
+	if get_tree().root.has_meta("is_story_mode"):
+		is_story_mode = get_tree().root.get_meta("is_story_mode")
+	
+	# Update button text for story mode
+	if is_story_mode:
+		$game_hud/end_panel/new_game_button.text = "RETRY LEVEL"
+	
 	start_new_game()
 	$game_hud/end_panel.visible = false
 	$game_hud/griot_cry.visible = false
@@ -94,10 +104,31 @@ func _ready() -> void:
 
 
 func start_new_game() -> void:
+	var saved_level = level
+	var saved_score = score
+	var saved_lines = lines_cleared
+	
 	score = 0
 	level = 0
 	lines_cleared = 0
 	is_game_running = true
+	
+	# Load saved progress if in story mode
+	if is_story_mode:
+		if get_tree().root.has_meta("story_progress_data"):
+			# Loading from save
+			var progress = get_tree().root.get_meta("story_progress_data")
+			get_tree().root.remove_meta("story_progress_data")
+			
+			if progress.has("level"):
+				level = progress.level
+				lines_cleared = progress.lines_cleared
+				score = progress.score
+		else:
+			# Retrying current level (after game over)
+			level = saved_level
+			lines_cleared = saved_lines
+			score = saved_score
 	
 	$game_hud/end_panel.visible = false
 	
@@ -107,6 +138,9 @@ func start_new_game() -> void:
 	
 	# Play gameplay music
 	AudioManager.play_gameplay_music()
+	
+	# Update background based on level
+	update_background()
 
 	update_hud()
 	clear_board()
@@ -199,6 +233,7 @@ func next_tetromino_preview() -> void:
 func check_rows() -> void:
 	var row: int = rows
 	var rows_cleared_this_time: int = 0
+	var rows_to_clear: Array = []
 	
 	while row > 0:
 		var cells_finished:= 0
@@ -206,12 +241,20 @@ func check_rows() -> void:
 			if not is_within_bounds( Vector2i( i +1, row )):
 				cells_finished += 1
 		if cells_finished == columns:
-			shift_rows( row )
+			rows_to_clear.append(row)
 			rows_cleared_this_time += 1
+			row -= 1
 		else: 
 			row -= 1
 	
 	if rows_cleared_this_time > 0:
+		# Blink animation for any line clear
+		await blink_rows(rows_to_clear)
+		
+		# Clear the rows
+		for cleared_row in rows_to_clear:
+			shift_rows(cleared_row)
+		
 		lines_cleared += rows_cleared_this_time
 		score += calculate_score(rows_cleared_this_time)
 		update_level()
@@ -219,6 +262,38 @@ func check_rows() -> void:
 		
 		# Play line clear sound effect
 		AudioManager.play_line_clear_sfx()
+
+func blink_rows(rows_to_blink: Array) -> void:
+	var blink_count = 2
+	var blink_duration = 0.05
+	
+	# Store original cell data
+	var original_cells = {}
+	for row in rows_to_blink:
+		for col in range(columns):
+			var cell_pos = Vector2i(col + 1, row)
+			var atlas = board.get_cell_atlas_coords(cell_pos)
+			original_cells[cell_pos] = atlas
+	
+	for blink in range(blink_count):
+		# Hide rows (erase cells)
+		for row in rows_to_blink:
+			for col in range(columns):
+				var cell_pos = Vector2i(col + 1, row)
+				board.erase_cell(cell_pos)
+		
+		await get_tree().create_timer(blink_duration).timeout
+		
+		# Show rows with original colors
+		for row in rows_to_blink:
+			for col in range(columns):
+				var cell_pos = Vector2i(col + 1, row)
+				if original_cells.has(cell_pos):
+					var atlas = original_cells[cell_pos]
+					if atlas != Vector2i(-1, -1):
+						board.set_cell(cell_pos, title_id, atlas)
+		
+		await get_tree().create_timer(blink_duration).timeout
 
 func shift_rows(row) -> void:
 	var atlas: Vector2i
@@ -255,7 +330,7 @@ func is_valid_rotation() -> bool:
 	return true
 	
 func is_within_bounds( pos: Vector2i ) -> bool:
-	if pos.x < 0 or pos.x >= columns + 1 or pos.y < 0 or pos.y >= rows + 1:
+	if pos.x < 1 or pos.x > columns or pos.y < 1 or pos.y > rows:
 		return false
 	
 	var tile_id = board.get_cell_source_id( pos )
@@ -271,6 +346,10 @@ func is_game_over() -> void:
 		if not is_within_bounds( i + cur_position):
 			land_tetromino()
 			$game_hud/end_panel.visible = true
+			
+			# Save story progress if in story mode
+			if is_story_mode:
+				AchievementManager.save_story_progress(level, score, lines_cleared)
 			
 			# Hide normal Griot and show crying Griot
 			$game_hud/griot.visible = false
@@ -305,13 +384,55 @@ func update_level() -> void:
 	if new_level != level:
 		level = new_level
 		
+		# Update background based on new level
+		update_background()
+		
 		# Play level up sound effect
 		AudioManager.play_level_up_sfx()
 		
-		# Check for achievement unlocks
-		var unlocked = AchievementManager.check_and_unlock_achievements(level)
-		for achievement in unlocked:
-			show_achievement_notification(achievement)
+		# Check for achievement unlocks (Story Mode only) - BEFORE checking for story complete
+		if is_story_mode:
+			var unlocked = AchievementManager.check_and_unlock_achievements(level)
+			for achievement in unlocked:
+				show_achievement_notification(achievement)
+		
+		# Check if story mode is complete (reached level 5)
+		if is_story_mode and level >= 5:
+			# Story mode complete! Show victory screen
+			get_tree().change_scene_to_file("res://scenes/story_complete.tscn")
+			return
+
+# Update background visibility based on current level
+func update_background() -> void:
+	# Determine which background should be visible
+	var target_background = null
+	
+	if level == 0:
+		target_background = $Background_lv1
+	elif level == 1:
+		target_background = $Background_lv2
+	elif level == 2:
+		target_background = $Background_lv3
+	elif level == 3:
+		target_background = $Background_lv4
+	elif level >= 4:
+		target_background = $Background_lv5
+	
+	# Fade out all backgrounds except the target
+	var backgrounds = [$Background_lv1, $Background_lv2, $Background_lv3, $Background_lv4, $Background_lv5]
+	
+	for bg in backgrounds:
+		if bg == target_background:
+			# Fade in the target background
+			bg.visible = true
+			var tween_in = create_tween()
+			tween_in.tween_property(bg, "modulate:a", 1.0, 1.0)
+		else:
+			# Fade out other backgrounds
+			if bg.visible:
+				var tween_out = create_tween()
+				tween_out.tween_property(bg, "modulate:a", 0.0, 1.0)
+				tween_out.tween_callback(func(): bg.visible = false)
 
 # Get fall speed based on current level
 func get_fall_speed() -> float:
@@ -330,16 +451,20 @@ func update_hud() -> void:
 
 # Show achievement unlock notification
 func show_achievement_notification(achievement: Dictionary) -> void:
+	# Load Orbitron Black font
+	var orbitron_black = load("res://assets/Orbitron/static/Orbitron-Black.ttf")
+	
 	# Create a simple notification label
 	var notification = Label.new()
-	notification.text = "Achievement Unlocked!\n" + achievement.name
+	notification.text = "Journal Unlocked!\n" + achievement.name
+	notification.add_theme_font_override("font", orbitron_black)
 	notification.add_theme_font_size_override("font_size", 24)
+	notification.add_theme_color_override("font_color", Color(0, 0, 0, 1))  # Black color
 	notification.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	notification.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
-	notification.modulate = Color(1, 0.8, 0, 1)  # Gold color
 	
 	# Position it in the center
-	notification.position = Vector2(360, 400)
+	notification.position = Vector2(2, 3)
 	notification.size = Vector2(400, 100)
 	notification.z_index = 100
 	

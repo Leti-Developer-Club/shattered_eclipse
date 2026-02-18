@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://chsqnbxodmjkt"]
+
+[ext_resource type="Script" uid="uid://7jj4m1e6ciq2" path="res://scripts/story_mode_select.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_ly50m"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_y8m1x"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_w7p0r"]
+[ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_do8s2"]
+
+[node name="StoryModeSelect" type="Control" unique_id=1627061558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1565482657]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.2, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1968618164]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=965171481]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=59796835]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ly50m")
+theme_override_font_sizes/font_size = 32
+text = "Story Mode"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1888032225]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="NewQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=202744147]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ly50m")
+theme_override_font_sizes/font_size = 24
+text = "Begin New Quest"
+
+[node name="LoadQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=124624331]
+custom_minimum_size = Vector2(400, 70)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ly50m")
+theme_override_font_sizes/font_size = 24
+text = "Load Quest"
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1222821530]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1897507303]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_ly50m")
+theme_override_font_sizes/font_size = 20
+text = "Back"
+
+[node name="Background" type="Sprite2D" parent="CenterContainer/VBoxContainer" unique_id=908854598]
+visible = false
+show_behind_parent = true
+position = Vector2(199, 111)
+texture = ExtResource("3_y8m1x")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=427437069]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.032)
+texture = ExtResource("4_w7p0r")
+
+[node name="griot" parent="." unique_id=1787747308 instance=ExtResource("5_do8s2")]
+position = Vector2(688, 688)
+scale = Vector2(1.2, 1.2)

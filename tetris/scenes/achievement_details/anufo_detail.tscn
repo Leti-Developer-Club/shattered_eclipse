@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://dutypwqc1t6ex"]
+
+[ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
+[ext_resource type="Script" uid="uid://bq5jgivc14lm" path="res://scripts/achievement_details/anufo_detail.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_am6ck"]
+[ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_2gsbp"]
+
+[node name="AnufoDetail" type="Control" unique_id=2084377953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=969152913]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="BookSprite" type="Sprite2D" parent="." unique_id=1636195002]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(341.00003, 367)
+scale = Vector2(1.2675478, 1.669746)
+texture = ExtResource("1_book")
+
+[node name="LeftPage" type="VBoxContainer" parent="BookSprite" unique_id=1942268169]
+offset_left = -198.66669
+offset_top = -169.5
+offset_right = 1.333313
+offset_bottom = 374.5
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="BookSprite/LeftPage" unique_id=499860212]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 20
+text = "Anufo Tribe"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="BookSprite/LeftPage" unique_id=474952921]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "The Anufo or Chakosi are an Akan people who live in the Dapaong and (Sansanné-)Mango areas of Togo, as well as in Ghana. They trace their origin to a place called Anou or Ano on the Komoé River in the Ivory Coast. Thus, they refer to themselves Anoufou \"people of Anu\"."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="BookSprite/LeftPage" unique_id=1072393221]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "The Anufor hardly ambushed any village they intended to attack. They would usually send a messenger to announce the possibility of war if the chief did not yield to the demands of supplying food and livestock to the army commanders of the Anou. The messenger thus presents pellets and corn, choosing the former meant they were prepared for war, the latter meant their demands will be met."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="BookSprite" unique_id=2073902405]
+offset_left = 17.356329
+offset_top = -128.76208
+offset_right = 217.35632
+offset_bottom = 267.2379
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="BookSprite/RightPage" unique_id=1396596191]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 8
+text = "The prefix (Na/Nam) has been added to each name of the military commanders to read Biemah and Somah. This is so because, in Anufor culture, one cannot mention the name of a grandfather without that prefix which often translates to 'Nana' or grandfather in several Akan dialects. The names of these commanders are still used throughout Anuforland and quite common with the descendants of the two commanders who form the only two recognised royal families/gates in Anuforland that ascend to the skin of kingship in Nzara or SanSanne Mango."
+autowrap_mode = 3
+
+[node name="ContentContainer" type="VBoxContainer" parent="." unique_id=1122170538]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 158.0
+offset_top = -99.0
+offset_right = 258.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="ContentContainer" unique_id=832920553]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "BACK"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=685484849]
+show_behind_parent = true
+position = Vector2(359, 413)
+texture = ExtResource("5_am6ck")
+
+[node name="anufu_mask" type="Sprite2D" parent="." unique_id=154011226]
+texture_filter = 1
+position = Vector2(453.00003, 542)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_2gsbp")
+region_enabled = true
+region_rect = Rect2(0, -2, 178, 222)

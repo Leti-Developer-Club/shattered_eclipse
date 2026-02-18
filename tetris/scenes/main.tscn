@@ -1,14 +1,56 @@
 [gd_scene format=4 uid="uid://u1jkfaj7rxw0"]
 
 [ext_resource type="Script" uid="uid://dyr23t4hskffq" path="res://scripts/main.gd" id="1_o5qli"]
-[ext_resource type="Texture2D" uid="uid://dqex7obi8pg07" path="res://assets/tetrominoes.png" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://ps50ginsdsn2" path="res://assets/tetrominoes3.png" id="2_choun"]
 [ext_resource type="PackedScene" uid="uid://cr72adhvxfaku" path="res://scenes/game_hud.tscn" id="3_sugp2"]
-[ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="4_jyhfs"]
 [ext_resource type="Script" uid="uid://ckqnm2hhae50e" path="res://scripts/grid_overlay.gd" id="5_grid"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="6_tefeu"]
+[ext_resource type="Texture2D" uid="uid://c3mb6r842k8wc" path="res://assets/backgrounds/photo_2026-02-17_14-29-02.jpg" id="8_85g3d"]
+[ext_resource type="Texture2D" uid="uid://qa4p2we77o2p" path="res://assets/backgrounds/photo_2026-02-17_14-29-11.jpg" id="9_choun"]
+[ext_resource type="Texture2D" uid="uid://dw5hs1hfh6b6a" path="res://assets/savanah/photo_2026-02-17_18-13-59.jpg" id="11_ya4ey"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
-texture = ExtResource("2_0wfyh")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eb6dy"]
+texture = ExtResource("2_choun")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+12:0/0 = 0
+13:0/0 = 0
+14:0/0 = 0
+15:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+10:1/0 = 0
+11:1/0 = 0
+12:1/0 = 0
+13:1/0 = 0
+14:1/0 = 0
+15:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_trceg"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_eb6dy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ya4ey"]
+texture = ExtResource("2_choun")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -19,35 +61,19 @@ texture_region_size = Vector2i(32, 32)
 6:0/0 = 0
 7:0/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_sgp6g"]
+[sub_resource type="TileSet" id="TileSet_eb6dy"]
 tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_0wfyh")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sugp2"]
-texture = ExtResource("2_0wfyh")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_jyhfs"]
-tile_size = Vector2i(32, 32)
-sources/0 = SubResource("TileSetAtlasSource_sugp2")
+sources/0 = SubResource("TileSetAtlasSource_ya4ey")
 
 [node name="Node2D" type="Node2D" unique_id=1246962202]
 script = ExtResource("1_o5qli")
 
-[node name="board" type="TileMapLayer" parent="." unique_id=130955351]
-tile_map_data = PackedByteArray("AAAAAAAAAAAHAAAAAAAAAAEAAAAHAAAAAAAAAAIAAAAHAAAAAAAAAAMAAAAHAAAAAAAAAAQAAAAHAAAAAAAAAAUAAAAHAAAAAAAAAAYAAAAHAAAAAAAAAAcAAAAHAAAAAAAAAAgAAAAHAAAAAAAAAAkAAAAHAAAAAAAAAAoAAAAHAAAAAAAAAAsAAAAHAAAAAAAAAAwAAAAHAAAAAAAAAA0AAAAHAAAAAAAAAA4AAAAHAAAAAAAAAA8AAAAHAAAAAAAAABAAAAAHAAAAAAAAABEAAAAHAAAAAAAAABIAAAAHAAAAAAAAABMAAAAHAAAAAAAAABQAAAAHAAAAAAAAABUAAAAHAAAAAAABAAAAAAAHAAAAAAABABUAAAAHAAAAAAACAAAAAAAHAAAAAAACABUAAAAHAAAAAAADAAAAAAAHAAAAAAADABUAAAAHAAAAAAAEAAAAAAAHAAAAAAAEABUAAAAHAAAAAAAFAAAAAAAHAAAAAAAFABUAAAAHAAAAAAAGAAAAAAAHAAAAAAAGABUAAAAHAAAAAAAHAAAAAAAHAAAAAAAHABUAAAAHAAAAAAAIAAAAAAAHAAAAAAAIABUAAAAHAAAAAAAJAAAAAAAHAAAAAAAJABUAAAAHAAAAAAAKAAAAAAAHAAAAAAAKABUAAAAHAAAAAAALAAAAAAAHAAAAAAALAAEAAAAHAAAAAAALAAIAAAAHAAAAAAALAAMAAAAHAAAAAAALAAQAAAAHAAAAAAALAAUAAAAHAAAAAAALAAYAAAAHAAAAAAALAAcAAAAHAAAAAAALAAgAAAAHAAAAAAALAAkAAAAHAAAAAAALAAoAAAAHAAAAAAALAAsAAAAHAAAAAAALAAwAAAAHAAAAAAALAA0AAAAHAAAAAAALAA4AAAAHAAAAAAALAA8AAAAHAAAAAAALABAAAAAHAAAAAAALABEAAAAHAAAAAAALABIAAAAHAAAAAAALABMAAAAHAAAAAAALABQAAAAHAAAAAAALABUAAAAHAAAAAAA=")
-tile_set = SubResource("TileSet_sgp6g")
+[node name="board" type="TileMapLayer" parent="." unique_id=1135073639]
+tile_map_data = PackedByteArray("AAAAAAAAAAAHAAAAAAAAAAEAAAAHAAAAAAAAAAIAAAAHAAAAAAAAAAMAAAAHAAAAAAAAAAQAAAAHAAAAAAAAAAUAAAAHAAAAAAAAAAYAAAAHAAAAAAAAAAcAAAAHAAAAAAAAAAgAAAAHAAAAAAAAAAkAAAAHAAAAAAAAAAoAAAAHAAAAAAAAAAsAAAAHAAAAAAAAAAwAAAAHAAAAAAAAAA0AAAAHAAAAAAAAAA4AAAAHAAAAAAAAABUAAAAHAAAAAAAAABQAAAAHAAAAAAAAAA8AAAAHAAAAAAAAABAAAAAHAAAAAAAAABEAAAAHAAAAAAAAABIAAAAHAAAAAAAAABMAAAAHAAAAAAALABUAAAAHAAAAAAAKABUAAAAHAAAAAAAJABUAAAAHAAAAAAAIABUAAAAHAAAAAAAHABUAAAAHAAAAAAAGABUAAAAHAAAAAAAFABUAAAAHAAAAAAAEABUAAAAHAAAAAAADABUAAAAHAAAAAAACABUAAAAHAAAAAAABABUAAAAHAAAAAAABAAAAAAAHAAAAAAACAAAAAAAHAAAAAAADAAAAAAAHAAAAAAAEAAAAAAAHAAAAAAAFAAAAAAAHAAAAAAAGAAAAAAAHAAAAAAAHAAAAAAAHAAAAAAAIAAAAAAAHAAAAAAAJAAAAAAAHAAAAAAAKAAAAAAAHAAAAAAALAAAAAAAHAAAAAAALAAEAAAAHAAAAAAALAAMAAAAHAAAAAAALAAIAAAAHAAAAAAALABQAAAAHAAAAAAALABMAAAAHAAAAAAALABIAAAAHAAAAAAALAAwAAAAHAAAAAAALAAsAAAAHAAAAAAALAAoAAAAHAAAAAAALAAcAAAAHAAAAAAALAAYAAAAHAAAAAAALAAUAAAAHAAAAAAALAAQAAAAHAAAAAAALAAgAAAAHAAAAAAALAAkAAAAHAAAAAAALAA0AAAAHAAAAAAALAA4AAAAHAAAAAAALAA8AAAAHAAAAAAALABAAAAAHAAAAAAALABEAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_trceg")
 
-[node name="active" type="TileMapLayer" parent="." unique_id=405703385]
-tile_set = SubResource("TileSet_jyhfs")
+[node name="active" type="TileMapLayer" parent="." unique_id=1924644600]
+tile_set = SubResource("TileSet_eb6dy")
 
 [node name="GridOverlay" type="Node2D" parent="." unique_id=1685077018]
 z_index = 1
@@ -55,16 +81,35 @@ script = ExtResource("5_grid")
 
 [node name="game_hud" parent="." unique_id=1317898753 instance=ExtResource("3_sugp2")]
 
-[node name="AshantiKingdom2" type="Sprite2D" parent="." unique_id=545180995]
-modulate = Color(1, 1, 1, 0.6313726)
-show_behind_parent = true
-texture_filter = 1
-position = Vector2(190.99998, 351.00003)
-scale = Vector2(6.359999, 12.800001)
-texture = ExtResource("4_jyhfs")
-
-[node name="Background" type="Sprite2D" parent="." unique_id=1562819371]
-modulate = Color(1, 1, 1, 0.43137255)
+[node name="Background_lv1" type="Sprite2D" parent="." unique_id=1562819371]
+self_modulate = Color(1, 1, 1, 0.49019608)
 show_behind_parent = true
 position = Vector2(346, 239)
 texture = ExtResource("6_tefeu")
+
+[node name="Background_lv4" type="Sprite2D" parent="." unique_id=752849792]
+self_modulate = Color(1, 1, 1, 0.49019608)
+show_behind_parent = true
+position = Vector2(349.00003, 363)
+scale = Vector2(0.9944445, 0.60781246)
+texture = ExtResource("8_85g3d")
+
+[node name="Background_lv5" type="Sprite2D" parent="." unique_id=1768124975]
+self_modulate = Color(1, 1, 1, 0.49019608)
+show_behind_parent = true
+position = Vector2(354.5, 387.5)
+scale = Vector2(1.0180556, 0.67109376)
+texture = ExtResource("9_choun")
+
+[node name="Background_lv2" type="Sprite2D" parent="." unique_id=1188095339]
+self_modulate = Color(1, 1, 1, 0.49019608)
+show_behind_parent = true
+position = Vector2(346, 239)
+texture = ExtResource("6_tefeu")
+
+[node name="Background_lv3" type="Sprite2D" parent="." unique_id=1238502729]
+self_modulate = Color(1, 1, 1, 0.49019608)
+show_behind_parent = true
+position = Vector2(359.5, 352.49997)
+scale = Vector2(1.0180556, 0.6398437)
+texture = ExtResource("11_ya4ey")
