@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://c8qvlsofidh6j" path="res://scripts/story_board2.gd" id="1_5eknf"]
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_5eknf"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_cluyi"]
-[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_he8jb"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_qkynd"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_qkynd"]
 
 [node name="story_board2" type="Control" unique_id=1234526290]
 layout_mode = 3
@@ -22,7 +21,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_1hayb")
 
 [node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
-self_modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(318, 328)
 scale = Vector2(0.58687943, 0.54535013)
 texture = ExtResource("2_5eknf")
@@ -33,13 +32,15 @@ scale = Vector2(0.9044118, 0.959695)
 texture = ExtResource("3_cluyi")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
+texture_filter = 1
 layout_mode = 0
 offset_left = 204.0
 offset_top = 162.0
 offset_right = 434.0
 offset_bottom = 484.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
-theme_override_fonts/font = ExtResource("4_he8jb")
+theme_override_fonts/font = ExtResource("5_qkynd")
+theme_override_font_sizes/font_size = 16
 text = "For thousands of years, the history of the African continent was protected by the Sun-Kings. They held their power not in swords, but in the Sun-Scrolls; a collection of every innovation, proverb, and trade secret from the North to the South."
 horizontal_alignment = 1
 vertical_alignment = 1

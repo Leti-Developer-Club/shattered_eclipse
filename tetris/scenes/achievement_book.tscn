@@ -4,12 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_1sbau"]
 [ext_resource type="Script" uid="uid://sct47xka2cmb" path="res://scripts/achievement_book.gd" id="3_script"]
 
-[node name="achievement-book" type="Node2D" unique_id=196295122]
+[node name="achievement-book" type="Control" unique_id=450738389]
 clip_children = 1
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("3_script")
 
 [node name="book" type="Sprite2D" parent="." unique_id=1097500014]
-self_modulate = Color(1, 1, 1, 0.78431374)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(-14, -4)
 scale = Vector2(1.2426343, 1.6351038)
 texture = ExtResource("1_i0i8o")

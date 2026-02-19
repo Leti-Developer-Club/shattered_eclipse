@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var left_vbox: VBoxContainer
 var right_vbox: VBoxContainer

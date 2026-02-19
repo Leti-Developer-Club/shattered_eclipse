@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://7sp2xnimergs" path="res://scripts/story_board5.gd" id="1_m06y7"]
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_m06y7"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_e8hkm"]
-[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_7oujr"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_f4cb1"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_f4cb1"]
 
 [node name="story_board5" type="Control" unique_id=1234526290]
 layout_mode = 3
@@ -34,12 +33,12 @@ texture = ExtResource("3_e8hkm")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
 layout_mode = 0
-offset_left = 179.0
+offset_left = 173.0
 offset_top = 33.0
-offset_right = 460.0
+offset_right = 454.0
 offset_bottom = 599.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
-theme_override_fonts/font = ExtResource("4_7oujr")
+theme_override_fonts/font = ExtResource("5_f4cb1")
 theme_override_font_sizes/font_size = 12
 text = "Your Quest: Restore the Sun-Scrolls
 

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
 [ext_resource type="Script" uid="uid://blia0f4q2fv7s" path="res://scripts/achievement_details/fante_detail.gd" id="2_script"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_d8qx3"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_t70cs"]
 
@@ -30,52 +30,6 @@ self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(339.8125, 363.5)
 scale = Vector2(1.2103553, 1.7020785)
 texture = ExtResource("1_book")
-
-[node name="LeftPage" type="VBoxContainer" parent="BookSprite" unique_id=407188700]
-offset_left = -207.22221
-offset_top = -175.96133
-offset_right = -17.222214
-offset_bottom = 367.03867
-theme_override_constants/separation = 16
-
-[node name="Title" type="Label" parent="BookSprite/LeftPage" unique_id=510861242]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 12
-text = "The Fantes - Coastal Region"
-horizontal_alignment = 1
-
-[node name="Page1" type="Label" parent="BookSprite/LeftPage" unique_id=1443199787]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 7
-text = "The Fante (Mfantsefo) are a major Akan subgroup primarily inhabiting the central coastal regions of Ghana, known for forming a powerful confederacy against the Ashanti Empire, their significant role in trade, and rich matrilineal traditions centered in Mankessim, their spiritual capital, with distinct Fante dialects and strong cultural ties to fishing and maritime history."
-autowrap_mode = 3
-
-[node name="Page2" type="Label" parent="BookSprite/LeftPage" unique_id=1241943067]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "Their traditional food includes Kenkey, Banku (Etsew) that is eaten with fish including Tilapia and other seafood, fresh pepper and vegetables. Many Fante's from the interior also traditionally eat yam and coco yams (ampesie) and fufu. The Oguaa Fetu Afahye (an annual traditional festival celebrated in Cape Coast) is actually a yam harvest festival that was previously celebrated in the Bono Kingdom and was brought to the coast during the exodus."
-autowrap_mode = 3
-
-[node name="RightPage" type="VBoxContainer" parent="BookSprite" unique_id=1029786272]
-offset_left = 10.895569
-offset_top = -144.23541
-offset_right = 210.89557
-offset_bottom = 155.76459
-theme_override_constants/separation = 15
-
-[node name="Page3" type="Label" parent="BookSprite/RightPage" unique_id=1762895028]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "Fetu Afahye Festival is one of the most important festivals celebrated by the Fante ethnic group. It is celebrated as a remembrance of a historic disease outbreak, to keep the towns clean and to prevent another epidemic befalling the Fante people."
-autowrap_mode = 3
 
 [node name="ContentContainer" type="VBoxContainer" parent="." unique_id=2092440676]
 layout_mode = 1
@@ -109,3 +63,51 @@ scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_t70cs")
 region_enabled = true
 region_rect = Rect2(355, -9, 197, 232)
+
+[node name="LeftPage" type="VBoxContainer" parent="." unique_id=407188700]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 72.0
+offset_right = 338.0
+offset_bottom = 642.0
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="LeftPage" unique_id=510861242]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 15
+text = "The Fantes - Coastal Region"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="LeftPage" unique_id=1443199787]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 12
+text = "The Fante (Mfantsefo) are a major Akan subgroup primarily inhabiting the central coastal regions of Ghana, known for forming a powerful confederacy against the Ashanti Empire, their significant role in trade, and rich matrilineal traditions centered in Mankessim, their spiritual capital, with distinct Fante dialects and strong cultural ties to fishing and maritime history."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="LeftPage" unique_id=1241943067]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "Their traditional food includes Kenkey, Banku (Etsew) that is eaten with fish including Tilapia and other seafood, fresh pepper and vegetables. Many Fante's from the interior also traditionally eat yam and coco yams (ampesie) and fufu. The Oguaa Fetu Afahye (an annual traditional festival celebrated in Cape Coast) is actually a yam harvest festival that was previously celebrated in the Bono Kingdom and was brought to the coast during the exodus."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="." unique_id=1029786272]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 110.000015
+offset_right = 594.0
+offset_bottom = 410.0
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="RightPage" unique_id=1762895028]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "Fetu Afahye Festival is one of the most important festivals celebrated by the Fante ethnic group. It is celebrated as a remembrance of a historic disease outbreak, to keep the towns clean and to prevent another epidemic befalling the Fante people."
+autowrap_mode = 3

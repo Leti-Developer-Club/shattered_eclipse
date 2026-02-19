@@ -6,42 +6,42 @@ var i_tetromino: Array = [
 	[Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)], # 180 degrees
 	[Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2), Vector2i(1, 3)]  # 270 degrees
 ]
- 
+
 var t_tetromino: Array = [
 	[Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)], # 0 degrees
 	[Vector2i(1, 0), Vector2i(1, 1), Vector2i(2, 1), Vector2i(1, 2)], # 90 degrees
 	[Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(1, 2)], # 180 degrees
 	[Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(1, 2)]  # 270 degrees
 ]
- 
+
 var o_tetromino: Array = [
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)], # All rotations are the same
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)], # All rotations are the same
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)], # All rotations are the same
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1)]  # All rotations are the same
 ]
- 
+
 var z_tetromino: Array = [
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(1, 1), Vector2i(2, 1)], # 0 degrees
 	[Vector2i(2, 0), Vector2i(1, 1), Vector2i(2, 1), Vector2i(1, 2)], # 90 degrees
 	[Vector2i(0, 1), Vector2i(1, 1), Vector2i(1, 2), Vector2i(2, 2)], # 180 degrees
 	[Vector2i(1, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(0, 2)]  # 270 degrees
 ]
- 
+
 var s_tetromino: Array = [
 	[Vector2i(1, 0), Vector2i(2, 0), Vector2i(0, 1), Vector2i(1, 1)], # 0 degrees
 	[Vector2i(1, 0), Vector2i(1, 1), Vector2i(2, 1), Vector2i(2, 2)], # 90 degrees
 	[Vector2i(1, 1), Vector2i(2, 1), Vector2i(0, 2), Vector2i(1, 2)], # 180 degrees
 	[Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(1, 2)]  # 270 degrees
 ]
- 
+
 var l_tetromino: Array = [
 	[Vector2i(2, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)], # 0 degrees
 	[Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2), Vector2i(2, 2)], # 90 degrees
 	[Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(0, 2)], # 180 degrees
 	[Vector2i(0, 0), Vector2i(1, 0), Vector2i(1, 1), Vector2i(1, 2)]  # 270 degrees
 ]
- 
+
 var j_tetromino: Array = [
 	[Vector2i(0, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1)], # 0 degrees
 	[Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1), Vector2i(1, 2)], # 90 degrees
@@ -89,6 +89,7 @@ func _ready() -> void:
 	$game_hud/end_panel/new_game_button.pressed.connect( start_new_game )
 	$game_hud/end_panel/main_menu_button.pressed.connect( _on_main_menu_pressed )
 	
+
 	# Check if we're in story mode
 	if get_tree().root.has_meta("is_story_mode"):
 		is_story_mode = get_tree().root.get_meta("is_story_mode")
@@ -108,6 +109,7 @@ func start_new_game() -> void:
 	var saved_score = score
 	var saved_lines = lines_cleared
 	
+
 	score = 0
 	level = 0
 	lines_cleared = 0
@@ -141,7 +143,7 @@ func start_new_game() -> void:
 	
 	# Update background based on level
 	update_background()
-
+	
 	update_hud()
 	clear_board()
 	clear_tetromino()
@@ -151,11 +153,12 @@ func start_new_game() -> void:
 	next_tetromino_type = choose_tetromino()
 	next_piece_atlas = Vector2i( all_tetrominoes.find( next_tetromino_type), 0 )
 	initialize_tetrominoes()
-	
+
 func _physics_process(delta: float) -> void:
 	if is_game_running:
 		var move_direction = Vector2i.ZERO
 		
+
 		if Input.is_action_just_pressed("ui_left"):
 			move_direction = Vector2i.LEFT
 		elif Input.is_action_just_pressed("ui_right"):
@@ -175,7 +178,7 @@ func _physics_process(delta: float) -> void:
 		if fall_timer >= cur_fall_interval:
 			move_tetromino( Vector2i.DOWN)
 			fall_timer = 0
-	
+
 func choose_tetromino() -> Array:
 	var selected_tetromino: Array
 	if not tetrominoes.is_empty():
@@ -211,6 +214,7 @@ func move_tetromino( direction: Vector2i ) -> void:
 			land_tetromino()
 			check_rows()
 			
+
 			cur_tetromino_type = next_tetromino_type
 			piece_atlas = next_piece_atlas
 			next_tetromino_type = choose_tetromino()
@@ -235,25 +239,31 @@ func check_rows() -> void:
 	var rows_cleared_this_time: int = 0
 	var rows_to_clear: Array = []
 	
+
 	while row > 0:
-		var cells_finished:= 0
-		for i in range( columns ):
-			if not is_within_bounds( Vector2i( i +1, row )):
-				cells_finished += 1
-		if cells_finished == columns:
+		var cells_filled := 0
+		for i in range(columns):
+			var cell_pos = Vector2i(i + 1, row)
+			# Check if cell is filled (has a tile)
+			var tile_id = board.get_cell_source_id(cell_pos)
+			if tile_id != -1:
+				cells_filled += 1
+		
+		# If all columns in this row are filled, mark for clearing
+		if cells_filled == columns:
 			rows_to_clear.append(row)
 			rows_cleared_this_time += 1
-			row -= 1
-		else: 
-			row -= 1
+		
+		row -= 1
 	
 	if rows_cleared_this_time > 0:
 		# Blink animation for any line clear
 		await blink_rows(rows_to_clear)
 		
-		# Clear the rows
-		for cleared_row in rows_to_clear:
-			shift_rows(cleared_row)
+		# Clear the rows - must clear from bottom to top (same row repeatedly)
+		# Because each shift moves rows down, we always clear the lowest row
+		for i in range(rows_cleared_this_time):
+			shift_rows(rows_to_clear[0])
 		
 		lines_cleared += rows_cleared_this_time
 		score += calculate_score(rows_cleared_this_time)
@@ -267,6 +277,7 @@ func blink_rows(rows_to_blink: Array) -> void:
 	var blink_count = 2
 	var blink_duration = 0.05
 	
+
 	# Store original cell data
 	var original_cells = {}
 	for row in rows_to_blink:
@@ -300,7 +311,7 @@ func shift_rows(row) -> void:
 	for i in range( row, 1, -1 ):
 		for j in range( columns):
 			atlas = board.get_cell_atlas_coords( Vector2i( j + 1, i - 1 ))
-			if atlas == Vector2i( -1, 1 ):
+			if atlas == Vector2i( -1, -1 ):
 				board.erase_cell( Vector2i( j +1, i))
 			else: 
 				board.set_cell( Vector2i( j + 1, i), title_id, atlas )
@@ -324,15 +335,17 @@ func is_valid_rotation() -> bool:
 	var next_rotation = ( rotation_index + 1 ) % 4
 	var rotated_tetromino = cur_tetromino_type[ next_rotation ]
 	
+
 	for block in rotated_tetromino:
 		if not is_within_bounds( cur_position + block ):
 			return false
 	return true
-	
+
 func is_within_bounds( pos: Vector2i ) -> bool:
 	if pos.x < 1 or pos.x > columns or pos.y < 1 or pos.y > rows:
 		return false
 	
+
 	var tile_id = board.get_cell_source_id( pos )
 	return tile_id == -1
 
@@ -347,6 +360,7 @@ func is_game_over() -> void:
 			land_tetromino()
 			$game_hud/end_panel.visible = true
 			
+
 			# Save story progress if in story mode
 			if is_story_mode:
 				AchievementManager.save_story_progress(level, score, lines_cleared)
@@ -361,7 +375,7 @@ func is_game_over() -> void:
 			
 			# Play game over music
 			AudioManager.play_gameover_music()
-
+	
 			is_game_running = false
 
 func _on_main_menu_pressed() -> void:
@@ -370,6 +384,7 @@ func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 # Calculate score based on lines cleared at once
+
 func calculate_score(lines_cleared_at_once: int) -> int:
 	match lines_cleared_at_once:
 		1: return 40 * (level + 1)
@@ -379,11 +394,13 @@ func calculate_score(lines_cleared_at_once: int) -> int:
 	return 0
 
 # Update level based on total lines cleared (every 10 lines)
+
 func update_level() -> void:
 	var new_level = lines_cleared / 10
 	if new_level != level:
 		level = new_level
 		
+
 		# Update background based on new level
 		update_background()
 		
@@ -403,10 +420,12 @@ func update_level() -> void:
 			return
 
 # Update background visibility based on current level
+
 func update_background() -> void:
 	# Determine which background should be visible
 	var target_background = null
 	
+
 	if level == 0:
 		target_background = $Background_lv1
 	elif level == 1:
@@ -435,6 +454,7 @@ func update_background() -> void:
 				tween_out.tween_callback(func(): bg.visible = false)
 
 # Get fall speed based on current level
+
 func get_fall_speed() -> float:
 	if level <= 9:
 		return 0.8 - (level * 0.07)
@@ -444,16 +464,19 @@ func get_fall_speed() -> float:
 		return 0.05
 
 # Update all HUD labels
+
 func update_hud() -> void:
 	$game_hud/huge_panel/score_label.text = "SCORE: " + str(score)
 	$game_hud/huge_panel/lines_cleared.text = "LINES: " + str(lines_cleared)
 	$game_hud/huge_panel/level.text = "LEVEL: " + str(level)
 
 # Show achievement unlock notification
+
 func show_achievement_notification(achievement: Dictionary) -> void:
 	# Load Orbitron Black font
 	var orbitron_black = load("res://assets/Orbitron/static/Orbitron-Black.ttf")
 	
+
 	# Create a simple notification label
 	var notification = Label.new()
 	notification.text = "Journal Unlocked!\n" + achievement.name
