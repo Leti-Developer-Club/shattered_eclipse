@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
 [ext_resource type="Script" uid="uid://b1vxpwrhaian2" path="res://scripts/achievement_details/ashanti_detail.gd" id="2_script"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_cv0nu"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_4cmdb"]
 
@@ -31,52 +31,6 @@ position = Vector2(353.3125, 366.50003)
 scale = Vector2(1.1774265, 1.7066975)
 texture = ExtResource("1_book")
 
-[node name="LeftPage" type="VBoxContainer" parent="BookSprite" unique_id=1579806479]
-offset_left = -204.0998
-offset_top = -170.2118
-offset_right = -4.0997925
-offset_bottom = 335.7882
-theme_override_constants/separation = 15
-
-[node name="Title" type="Label" parent="BookSprite/LeftPage" unique_id=409845324]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 20
-text = "Ashanti Kingdom"
-horizontal_alignment = 1
-
-[node name="Page1" type="Label" parent="BookSprite/LeftPage" unique_id=10614172]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 9
-text = "The Asante, are a major ethnic group within the Akan people, native to the Ashanti Region of modern-day Ghana, with significant populations also in Togo and Côte d'Ivoire. They are one of Ghana's largest and most influential ethnic groups, with an estimated population of over 4.7 million people."
-autowrap_mode = 3
-
-[node name="Page2" type="Label" parent="BookSprite/LeftPage" unique_id=1790773015]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "The Ashanti developed a powerful empire in the 17th century, centered in Kumasi, which became the capital in 1680 under Asantehene Osei Kofi Tutu I. The empire rose to prominence through control of gold mines and participation in the trans-Saharan and Atlantic slave trades, becoming a dominant force in West Africa by the 18th century."
-autowrap_mode = 3
-
-[node name="RightPage" type="VBoxContainer" parent="BookSprite" unique_id=795595468]
-offset_left = 13.323543
-offset_top = -129.1969
-offset_right = 213.32355
-offset_bottom = 170.8031
-theme_override_constants/separation = 15
-
-[node name="Page3" type="Label" parent="BookSprite/RightPage" unique_id=247422722]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "The Golden Stool is the most sacred symbol of the Ashanti nation, believed to contain the soul of the people and representing unity, spiritual authority, and national identity. It has never touched the ground and is never sat upon. Spiritually, the Ashanti practice a blend of traditional beliefs, including reverence for Nyame, the Supreme Being, abosom (nature spirits), and ancestors."
-autowrap_mode = 3
-
 [node name="ContentContainer" type="VBoxContainer" parent="." unique_id=587473252]
 layout_mode = 1
 anchors_preset = 7
@@ -104,8 +58,56 @@ texture = ExtResource("5_cv0nu")
 
 [node name="asante_mask" type="Sprite2D" parent="." unique_id=503220102]
 texture_filter = 1
-position = Vector2(457, 450.99997)
+position = Vector2(457.00003, 490.99994)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("6_4cmdb")
 region_enabled = true
 region_rect = Rect2(173, 3, 184, 218)
+
+[node name="LeftPage" type="VBoxContainer" parent="." unique_id=1579806479]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 75.99997
+offset_right = 354.0
+offset_bottom = 582.0
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="LeftPage" unique_id=409845324]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Ashanti Kingdom"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="LeftPage" unique_id=10614172]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The Asante, are a major ethnic group within the Akan people, native to the Ashanti Region of modern-day Ghana, with significant populations also in Togo and Côte d'Ivoire. They are one of Ghana's largest and most influential ethnic groups, with an estimated population of over 4.7 million people."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="LeftPage" unique_id=1790773015]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The Ashanti developed a powerful empire in the 17th century, centered in Kumasi, which became the capital in 1680 under Asantehene Osei Kofi Tutu I. The empire rose to prominence through control of gold mines and participation in the trans-Saharan and Atlantic slave trades, becoming a dominant force in West Africa by the 18th century."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="." unique_id=795595468]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 122.000015
+offset_right = 598.0
+offset_bottom = 455.0
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="RightPage" unique_id=247422722]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The Golden Stool is the most sacred symbol of the Ashanti nation, believed to contain the soul of the people and representing unity, spiritual authority, and national identity. It has never touched the ground and is never sat upon. Spiritually, the Ashanti practice a blend of traditional beliefs, including reverence for Nyame, the Supreme Being, abosom (nature spirits), and ancestors."
+autowrap_mode = 3

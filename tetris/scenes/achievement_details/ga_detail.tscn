@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
 [ext_resource type="Script" uid="uid://cvn5f8llm7kut" path="res://scripts/achievement_details/ga_detail.gd" id="2_script"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="5_68vwi"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_tn5a6"]
 
@@ -32,52 +32,6 @@ self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(341, 354)
 scale = Vector2(1.1886915, 1.6570438)
 texture = ExtResource("1_book")
-
-[node name="LeftPage" type="VBoxContainer" parent="BookSprite" unique_id=105695263]
-offset_left = -205.2677
-offset_top = -176.21742
-offset_right = -5.2677
-offset_bottom = 443.7826
-theme_override_constants/separation = 15
-
-[node name="Title" type="Label" parent="BookSprite/LeftPage" unique_id=210923215]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 20
-text = "The Ga Tribe"
-horizontal_alignment = 1
-
-[node name="Page1" type="Label" parent="BookSprite/LeftPage" unique_id=261069978]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "Ga people are believed to have migrated from the eastern regions of West Africa, possibly from Lake Chad, through the Niger River basin, and into present-day Ghana by the 17th century. Oral traditions recount a long migration journey, including stops in Nigeria, Togo, and Benin, with some legends suggesting origins in ancient Israel, linking them to the tribes of Dan and Gad—though this is not supported by mainstream historical or archaeological evidence."
-autowrap_mode = 3
-
-[node name="Page2" type="Label" parent="BookSprite/LeftPage" unique_id=585575354]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "They maintain a strong cultural identity, celebrated annually through the Homowo Festival, a harvest celebration that commemorates their survival after a famine. The Ga practice matrilineal descent for property inheritance and patrilineal descent for public office, reflecting a complex social structure."
-autowrap_mode = 3
-
-[node name="RightPage" type="VBoxContainer" parent="BookSprite" unique_id=1945911615]
-offset_left = 10.936399
-offset_top = -134.57701
-offset_right = 210.9364
-offset_bottom = 166.42299
-theme_override_constants/separation = 15
-
-[node name="Page3" type="Label" parent="BookSprite/RightPage" unique_id=1541905431]
-layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_font")
-theme_override_font_sizes/font_size = 8
-text = "Around the turn of the twentieth century Accra experienced a series of disasters, including famines, a fire in 1894, an earthquake in 1906, bubonic plague, and the influenza pandemic of 1918-1919, as well as continuous emigration of skilled laborers. A severe earthquake in 1939 destroyed much of Central Accra and gave added impetus to settle in new suburban settlements such as Kaneshie and Adabraka."
-autowrap_mode = 3
 
 [node name="ContentContainer" type="VBoxContainer" parent="." unique_id=1186176138]
 texture_filter = 1
@@ -110,8 +64,56 @@ texture = ExtResource("5_tn5a6")
 
 [node name="ga_mask" type="Sprite2D" parent="." unique_id=1173820360]
 texture_filter = 1
-position = Vector2(443, 462)
+position = Vector2(443, 502)
 scale = Vector2(0.6, 0.592)
 texture = ExtResource("5_68vwi")
 region_enabled = true
 region_rect = Rect2(545, 0, 173, 229)
+
+[node name="LeftPage" type="VBoxContainer" parent="." unique_id=105695263]
+layout_mode = 0
+offset_left = 97.00003
+offset_top = 62.0
+offset_right = 338.0
+offset_bottom = 682.0
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="LeftPage" unique_id=210923215]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "The Ga Tribe"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="LeftPage" unique_id=261069978]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 12
+text = "Ga people are believed to have migrated from the eastern regions of West Africa, possibly from Lake Chad, through the Niger River basin, and into present-day Ghana by the 17th century. Oral traditions recount a long migration journey, including stops in Nigeria, Togo, and Benin, with some legends suggesting origins in ancient Israel, linking them to the tribes of Dan and Gad—though this is not supported by mainstream historical or archaeological evidence."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="LeftPage" unique_id=585575354]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "They maintain a strong cultural identity, celebrated annually through the Homowo Festival, a harvest celebration that commemorates their survival after a famine. The Ga practice matrilineal descent for property inheritance and patrilineal descent for public office, reflecting a complex social structure."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="." unique_id=1945911615]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 108.0
+offset_right = 588.0
+offset_bottom = 435.0
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="RightPage" unique_id=1541905431]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "Around the turn of the twentieth century Accra experienced a series of disasters, including famines, a fire in 1894, an earthquake in 1906, bubonic plague, and the influenza pandemic of 1918-1919, as well as continuous emigration of skilled laborers. A severe earthquake in 1939 destroyed much of Central Accra and gave added impetus to settle in new suburban settlements such as Kaneshie and Adabraka."
+autowrap_mode = 3

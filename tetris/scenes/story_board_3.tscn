@@ -4,8 +4,7 @@
 [ext_resource type="Script" uid="uid://dyaf3u34v0s28" path="res://scripts/story_board3.gd" id="1_ov7hf"]
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_ov7hf"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_pjj1p"]
-[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_0hisp"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_ex5gp"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_ex5gp"]
 
 [node name="story_board3" type="Control" unique_id=1234526290]
 layout_mode = 3
@@ -22,7 +21,7 @@ scale = Vector2(1.4, 1.4)
 texture = ExtResource("1_2mc34")
 
 [node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
-self_modulate = Color(1, 1, 1, 0.7058824)
+self_modulate = Color(1, 1, 1, 0.8627451)
 position = Vector2(318, 328)
 scale = Vector2(0.58687943, 0.54535013)
 texture = ExtResource("2_ov7hf")
@@ -34,12 +33,12 @@ texture = ExtResource("3_pjj1p")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
 layout_mode = 0
-offset_left = 195.0
-offset_top = 99.0
-offset_right = 446.0
-offset_bottom = 495.0
+offset_left = 186.0
+offset_top = 102.0
+offset_right = 437.0
+offset_bottom = 498.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
-theme_override_fonts/font = ExtResource("4_0hisp")
+theme_override_fonts/font = ExtResource("5_ex5gp")
 theme_override_font_sizes/font_size = 14
 text = "This knowledge was kept in a magical golden jar, guarded by the Great Shaman, me, Muzu. 
 However, a shadow known as \"The Eclipse\" grew jealous of this light. It shattered the golden jar, scattering the history of the continent to the winds. People forgot how to trade fairly, how to build great stone walls, and how to read the stars. The world began to lose its color."

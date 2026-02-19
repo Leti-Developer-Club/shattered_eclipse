@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_jwa7t"]
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_1g12b"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_e0uiu"]
-[ext_resource type="FontFile" uid="uid://b8ee3p2fjhx5j" path="res://assets/Orbitron/static/Orbitron-Medium.ttf" id="4_bxsxf"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_0q5lq"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_0q5lq"]
 
 [node name="story_board4" type="Control" unique_id=1234526290]
 layout_mode = 3
@@ -34,13 +33,13 @@ texture = ExtResource("3_e0uiu")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
 layout_mode = 0
-offset_left = 193.0
-offset_top = 73.0
-offset_right = 444.0
-offset_bottom = 469.0
+offset_left = 187.0
+offset_top = 108.0
+offset_right = 438.0
+offset_bottom = 504.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
-theme_override_fonts/font = ExtResource("4_bxsxf")
-theme_override_font_sizes/font_size = 14
+theme_override_fonts/font = ExtResource("5_0q5lq")
+theme_override_font_sizes/font_size = 16
 text = "You are a young apprentice Griot— the only one who can still see the faint glimmer of lost history. Muzu, now a spirit guide, calls out to you. He gives you the Griot's Compass, which points toward lost knowledge"
 horizontal_alignment = 1
 vertical_alignment = 1

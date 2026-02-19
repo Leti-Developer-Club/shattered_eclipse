@@ -54,7 +54,7 @@ An educational Tetris game teaching African history to primary school learners.
 
 **Engaging Gameplay Elements**
 
-- Dynamic backgrounds change with each level
+- Dynamic backgrounds change with each level+
 - Griot spirit guide character with animations
 - Achievement book with detailed tribal histories
 - Classic Tetris scoring system
