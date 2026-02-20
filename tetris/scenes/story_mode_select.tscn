@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://chsqnbxodmjkt"]
 
 [ext_resource type="Script" uid="uid://7jj4m1e6ciq2" path="res://scripts/story_mode_select.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_ly50m"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_ly50m"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_y8m1x"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_w7p0r"]
 [ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_do8s2"]

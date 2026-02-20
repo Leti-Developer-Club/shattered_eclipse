@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://cr72adhvxfaku"]
 
-[ext_resource type="FontFile" uid="uid://dfl5quiwsytko" path="res://assets/Orbitron/static/Orbitron-ExtraBold.ttf" id="1_b3s3x"]
+[ext_resource type="FontFile" uid="uid://br2v6gis26ouv" path="res://assets/Orbitron/static/Orbitron-ExtraBold.ttf" id="1_b3s3x"]
 [ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="1_jna2d"]
 [ext_resource type="Texture2D" uid="uid://ts7hr0rs1o17" path="res://assets/book-page.png" id="3_b3s3x"]
 [ext_resource type="PackedScene" uid="uid://cgfxw2uyui26a" path="res://scenes/griot_cry.tscn" id="3_gjmhc"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_pexd4"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_pexd4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t4dp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
