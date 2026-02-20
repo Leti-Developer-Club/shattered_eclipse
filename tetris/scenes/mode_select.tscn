@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://24r07tmm8fss"]
 
 [ext_resource type="Script" uid="uid://dbmj23t11x8vm" path="res://scripts/mode_select.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_eccxc"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_eccxc"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_eccxc"]
 [ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_q6xnb"]
 
@@ -38,11 +38,10 @@ theme_override_constants/separation = 12
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=35497338]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 33
-text = "Select Game Mode"
+text = "SELECT GAME MODE"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1982640219]
@@ -56,12 +55,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
-text = "Story Mode"
+text = "STORY MODE"
 
 [node name="StoryDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=845483684]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eccxc")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 10
 text = "Follow Griot's journey to restore the Sun-Scrolls"
 horizontal_alignment = 1
 
@@ -72,14 +71,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
-text = "Classic Mode"
+text = "CLASSIC MODE"
 
 [node name="ClassicDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1460050359]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eccxc")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 10
 text = "Play traditional Tetris with no story"
 horizontal_alignment = 1
+
+[node name="how_to_play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1337352138]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 24
+text = "HOW TO PLAY"
 
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1759275400]
 custom_minimum_size = Vector2(300, 60)
@@ -88,4 +96,4 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
-text = "Back"
+text = "BACK"

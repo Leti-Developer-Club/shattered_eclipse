@@ -39,14 +39,13 @@ theme_override_constants/separation = 20
 
 [node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=59796835]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 32
-text = "Story Mode"
+text = "STORY MODE"
 horizontal_alignment = 1
 
-[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1888032225]
-custom_minimum_size = Vector2(0, 30)
+[node name="Spacer3" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1188815385]
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="NewQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=202744147]
@@ -54,14 +53,14 @@ custom_minimum_size = Vector2(400, 70)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 24
-text = "Begin New Quest"
+text = "BEGIN NEW QUEST"
 
 [node name="LoadQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=124624331]
 custom_minimum_size = Vector2(400, 70)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 24
-text = "Load Quest"
+text = "LOAD QUEST"
 
 [node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1222821530]
 custom_minimum_size = Vector2(0, 20)
@@ -74,7 +73,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 20
-text = "Back"
+text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="CenterContainer/VBoxContainer" unique_id=908854598]
 visible = false

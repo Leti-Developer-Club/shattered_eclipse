@@ -63,7 +63,7 @@ offset_top = 492.0
 offset_right = 409.0
 offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
-text = "Begin Quest"
+text = "BEGIN QUEST"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
 layout_mode = 0
@@ -72,4 +72,4 @@ offset_top = 492.0
 offset_right = 261.0
 offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
-text = "Back"
+text = "BACK"

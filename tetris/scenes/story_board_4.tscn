@@ -52,7 +52,7 @@ offset_top = 483.0
 offset_right = 407.0
 offset_bottom = 512.0
 theme_override_fonts/font = ExtResource("5_0q5lq")
-text = "Next"
+text = "NEXT"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
 layout_mode = 0
@@ -61,4 +61,4 @@ offset_top = 483.0
 offset_right = 260.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_0q5lq")
-text = "Back"
+text = "BACK"
