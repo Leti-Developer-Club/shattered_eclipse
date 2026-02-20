@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_am6ck"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_2gsbp"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_06sph"]
 
 [node name="AnufoDetail" type="Control" unique_id=2084377953]
 layout_mode = 3
@@ -52,6 +53,7 @@ theme_override_font_sizes/font_size = 18
 text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=685484849]
+visible = false
 show_behind_parent = true
 position = Vector2(359, 413)
 texture = ExtResource("5_am6ck")
@@ -112,3 +114,9 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 13
 text = "The prefix (Na/Nam) has been added to each name of the military commanders to read Biemah and Somah. This is so because, in Anufor culture, one cannot mention the name of a grandfather without that prefix which often translates to 'Nana' or grandfather in several Akan dialects. The names of these commanders are still used throughout Anuforland and quite common with the descendants of the two commanders who form the only two recognised royal families/gates in Anuforland that ascend to the skin of kingship in Nzara or SanSanne Mango."
 autowrap_mode = 3
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=779433162]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_06sph")

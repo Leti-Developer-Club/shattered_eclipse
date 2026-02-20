@@ -115,7 +115,7 @@ theme_override_constants/separation = 22
 script = ExtResource("3_8ln24")
 resolution_option = NodePath("HBoxContainer/res_options")
 fullscreen_check = NodePath("HBoxContainer2/full_CheckBox")
-borderless_check = NodePath("HBoxContainer3/boarderless_CheckBox")
+borderless_check = NodePath("HBoxContainer3/borderless_CheckBox")
 vsync_check = NodePath("HBoxContainer4/vSunc_CheckBox")
 
 [node name="title" type="Label" parent="CenterContainer/display_panel" unique_id=1980245507]
@@ -170,15 +170,15 @@ autowrap_trim_flags = 192
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/display_panel" unique_id=1910826902]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-theme_override_constants/separation = 26
+theme_override_constants/separation = 41
 
-[node name="boarderless" type="Label" parent="CenterContainer/display_panel/HBoxContainer3" unique_id=1336487265]
+[node name="borderless" type="Label" parent="CenterContainer/display_panel/HBoxContainer3" unique_id=1336487265]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
-text = "BOARDERLESS"
+text = "BORDERLESS"
 
-[node name="boarderless_CheckBox" type="CheckBox" parent="CenterContainer/display_panel/HBoxContainer3" unique_id=178552729]
+[node name="borderless_CheckBox" type="CheckBox" parent="CenterContainer/display_panel/HBoxContainer3" unique_id=178552729]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24

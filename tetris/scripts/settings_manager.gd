@@ -31,6 +31,8 @@ func _ready():
 	apply_video_settings()
 	apply_audio_settings()
 	#apply_language_settings()
+	print("Settings path: ", ProjectSettings.globalize_path("user://settings.cfg"))
+
 	
  
 func save_settings():

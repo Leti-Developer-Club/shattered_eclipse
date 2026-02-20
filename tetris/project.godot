@@ -27,7 +27,8 @@ SettingsManager="*uid://cjrdv2x27wsl4"
 window/size/viewport_width=700
 window/size/viewport_height=705
 window/size/mode=4
-window/stretch/mode="viewport"
+window/size/initial_position_type=0
+window/stretch/mode="canvas_items"
 
 [input]
 

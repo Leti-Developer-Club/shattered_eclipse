@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://26if7upmo2x7"]
 
 [ext_resource type="Script" uid="uid://dhfgxlw0ak14s" path="res://scripts/story_complete.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://cbev24kv6salo" path="res://assets/Orbitron/static/Orbitron-Black.ttf" id="2_7pqba"]
-[ext_resource type="FontFile" uid="uid://covpatmtjj8ud" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_c65cw"]
+[ext_resource type="FontFile" uid="uid://dko0lex4eap0n" path="res://assets/Orbitron/static/Orbitron-Black.ttf" id="2_7pqba"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_c65cw"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="4_7pqba"]
 [ext_resource type="Texture2D" uid="uid://c4jfljo87g71v" path="res://assets/ashanti kingdom_2.png" id="5_q76y4"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_s0pqi"]
