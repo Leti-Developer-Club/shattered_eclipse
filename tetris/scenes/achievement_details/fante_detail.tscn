@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://blia0f4q2fv7s" path="res://scripts/achievement_details/fante_detail.gd" id="2_script"]
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_d8qx3"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_3t766"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_t70cs"]
 
 [node name="FanteDetail" type="Control" unique_id=31283294]
@@ -52,6 +53,7 @@ theme_override_font_sizes/font_size = 18
 text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1983313747]
+visible = false
 show_behind_parent = true
 position = Vector2(314, 330)
 texture = ExtResource("5_d8qx3")
@@ -111,3 +113,9 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 13
 text = "Fetu Afahye Festival is one of the most important festivals celebrated by the Fante ethnic group. It is celebrated as a remembrance of a historic disease outbreak, to keep the towns clean and to prevent another epidemic befalling the Fante people."
 autowrap_mode = 3
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=937106945]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_3t766")

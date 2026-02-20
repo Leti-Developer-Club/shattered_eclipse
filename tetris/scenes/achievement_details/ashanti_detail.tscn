@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_cv0nu"]
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_4cmdb"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_bi3ev"]
 
 [node name="AshantiDetail" type="Control" unique_id=992663948]
 layout_mode = 3
@@ -52,6 +53,7 @@ theme_override_font_sizes/font_size = 18
 text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1315880084]
+visible = false
 show_behind_parent = true
 position = Vector2(342, 371)
 texture = ExtResource("5_cv0nu")
@@ -111,3 +113,9 @@ theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 13
 text = "The Golden Stool is the most sacred symbol of the Ashanti nation, believed to contain the soul of the people and representing unity, spiritual authority, and national identity. It has never touched the ground and is never sat upon. Spiritually, the Ashanti practice a blend of traditional beliefs, including reverence for Nyame, the Supreme Being, abosom (nature spirits), and ancestors."
 autowrap_mode = 3
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1460143641]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_bi3ev")
