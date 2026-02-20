@@ -10,7 +10,8 @@ var stage_clear_player: AudioStreamPlayer
 # Audio players for sound effects
 var level_up_player: AudioStreamPlayer
 var line_clear_player: AudioStreamPlayer
-var button_click_player: AudioStreamPlayer
+var button_click_players: Array[AudioStreamPlayer] = []
+var current_click_index: int = 0
 
 # Track what's currently playing
 var current_track: String = ""
@@ -30,25 +31,32 @@ func _ready() -> void:
 	# Create audio players for sound effects
 	level_up_player = AudioStreamPlayer.new()
 	line_clear_player = AudioStreamPlayer.new()
-	button_click_player = AudioStreamPlayer.new()
+	
+	# Create multiple button click players for polyphony
+	for i in range(5):
+		var player = AudioStreamPlayer.new()
+		button_click_players.append(player)
+		add_child(player)
 	
 	add_child(title_player)
 	add_child(gameover_player)
 	add_child(stage_clear_player)
 	add_child(level_up_player)
 	add_child(line_clear_player)
-	add_child(button_click_player)
 	
 	# Load audio files
-	title_player.stream = load("res://assets/sound/01 Title.mp3")
-	gameplay_players[0].stream = load("res://assets/sound/02 A-Type Music (version 1.1).mp3")
-	gameplay_players[1].stream = load("res://assets/sound/03 B-Type Music.mp3")
-	gameplay_players[2].stream = load("res://assets/sound/04 C-Type Music.mp3")
-	stage_clear_player.stream = load("res://assets/sound/07 Stage Clear.mp3")
-	gameover_player.stream = load("res://assets/sound/08 Game Over.mp3")
-	level_up_player.stream = load("res://assets/sound/level_upgrade.mp3")
-	line_clear_player.stream = load("res://assets/sound/line_clear.mp3")
-	button_click_player.stream = load("res://assets/sound/ui_select_yes.mp3")
+	title_player.stream = load("res://assets/sound/leti_sounds/musicloop1.mp3")
+	gameplay_players[0].stream = load("res://assets/sound/leti_sounds/musicloop.wav")
+	gameplay_players[1].stream = load("res://assets/sound/leti_sounds/musicloop.wav")
+	gameplay_players[2].stream = load("res://assets/sound/leti_sounds/musicloop.wav")
+	stage_clear_player.stream = load( "res://assets/sound/leti_sounds/musicloop1.mp3" )
+	gameover_player.stream = load("res://assets/sound/leti_sounds/Timebound_Sfx_On Death.wav")
+	level_up_player.stream = load( "res://assets/sound/leti_sounds/Timebound_Sfx_Collectible Diamond.wav" )
+	line_clear_player.stream = load( "res://assets/sound/leti_sounds/Timebound_Sfx_Collectible Gold.wav" )
+	
+	# Load button click sound for all button click players
+	for player in button_click_players:
+		player.stream = load( "res://assets/sound/leti_sounds/MenuNavigate2.wav" )
 	
 	# Set all music to Music bus
 	title_player.bus = "Music"
@@ -60,7 +68,8 @@ func _ready() -> void:
 	# Set sound effects to SFX bus
 	level_up_player.bus = "SFX"
 	line_clear_player.bus = "SFX"
-	button_click_player.bus = "SFX"
+	for player in button_click_players:
+		player.bus = "SFX"
 	
 	# Connect finished signals for looping
 	title_player.finished.connect(_on_title_finished)
@@ -141,5 +150,9 @@ func play_line_clear_sfx() -> void:
 		line_clear_player.play()
 
 func play_button_click_sfx() -> void:
-	if button_click_player.stream:
-		button_click_player.play()
+	# Use round-robin to play on different players for polyphony
+	if button_click_players.size() > 0 and button_click_players[current_click_index].stream:
+		button_click_players[current_click_index].play()
+	
+	# Move to next player for next click
+	current_click_index = (current_click_index + 1) % button_click_players.size()

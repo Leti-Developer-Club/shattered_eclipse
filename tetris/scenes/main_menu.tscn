@@ -51,14 +51,14 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
-text = "Start Game"
+text = "START GAME"
 
 [node name="AchievementsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=315769507]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
-text = "Achievements"
+text = "KNOWLEDGE JOURNALS"
 
 [node name="settings_button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2044502777]
 custom_minimum_size = Vector2(300, 60)
@@ -72,7 +72,7 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
-text = "Exit Game"
+text = "EXIT GAME"
 
 [node name="settings" type="VBoxContainer" parent="CenterContainer" unique_id=1635809593]
 visible = false
@@ -231,7 +231,6 @@ theme_override_font_sizes/font_size = 24
 text = "MASTER"
 
 [node name="master_HSlider" type="HSlider" parent="CenterContainer/audio_panel/HBoxContainer" unique_id=704879837]
-modulate = Color(0.20639996, 0.6, 0.10800001, 1)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -248,7 +247,6 @@ theme_override_font_sizes/font_size = 24
 text = "MUSIC"
 
 [node name="music_HSlider" type="HSlider" parent="CenterContainer/audio_panel/HBoxContainer2" unique_id=102733711]
-modulate = Color(0.20639996, 0.6, 0.10800001, 1)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -265,7 +263,6 @@ theme_override_font_sizes/font_size = 24
 text = "SFX"
 
 [node name="sfx_HSlider" type="HSlider" parent="CenterContainer/audio_panel/HBoxContainer3" unique_id=1375044040]
-modulate = Color(0.20639996, 0.6, 0.10800001, 1)
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 4
@@ -403,9 +400,9 @@ scale = Vector2(1.2, 1.2)
 visible = false
 layout_mode = 0
 offset_left = 308.0
-offset_top = 594.0
-offset_right = 358.0
-offset_bottom = 625.0
+offset_top = 578.0
+offset_right = 395.0
+offset_bottom = 617.0
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
 text = "BACK"

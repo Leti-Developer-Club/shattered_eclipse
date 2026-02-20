@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://rhq1m7wwiqyj"]
+
+[ext_resource type="Script" uid="uid://bcss5vboybygn" path="res://scripts/how_to_play.gd" id="1_30apa"]
+[ext_resource type="Texture2D" uid="uid://cmub2ed0eqty2" path="res://assets/howToPlay.png" id="1_d4i75"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_88ieg"]
+
+[node name="howToPlay" type="Control" unique_id=1813437619]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_30apa")
+
+[node name="HowToPlay" type="Sprite2D" parent="." unique_id=2107309680]
+position = Vector2(332.00003, 372)
+scale = Vector2(0.65208334, 0.8642578)
+texture = ExtResource("1_d4i75")
+
+[node name="BackButton" type="Button" parent="." unique_id=40583027]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 0
+offset_left = 189.0
+offset_top = 614.0
+offset_right = 489.0
+offset_bottom = 674.0
+theme_override_fonts/font = ExtResource("2_88ieg")
+theme_override_font_sizes/font_size = 24
+text = "BACK"

@@ -54,7 +54,7 @@ func _update_button_labels():
 func _on_rebind_button_pressed(direction: String):
 	waiting_for_input = direction
 	var btn = _get_button(direction)
-	btn.text = "..."
+	btn.text = "waiting for input..."
 	set_process_input(true)
  
 func _input(event):
