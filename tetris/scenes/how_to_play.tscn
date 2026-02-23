@@ -4,6 +4,15 @@
 [ext_resource type="Texture2D" uid="uid://cmub2ed0eqty2" path="res://assets/howToPlay.png" id="1_d4i75"]
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="2_88ieg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30apa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkrkv"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wi5qh"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="howToPlay" type="Control" unique_id=1813437619]
 layout_mode = 3
 anchors_preset = 0
@@ -23,4 +32,7 @@ offset_right = 489.0
 offset_bottom = 674.0
 theme_override_fonts/font = ExtResource("2_88ieg")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_30apa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xkrkv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_wi5qh")
 text = "BACK"

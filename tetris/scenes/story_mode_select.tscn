@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_w7p0r"]
 [ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_do8s2"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_do8s2"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fp6ui"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g43ev"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="StoryModeSelect" type="Control" unique_id=1627061558]
 layout_mode = 3
 anchors_preset = 15
@@ -49,17 +58,23 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="NewQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=202744147]
-custom_minimum_size = Vector2(400, 70)
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_do8s2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fp6ui")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g43ev")
 text = "BEGIN NEW QUEST"
 
 [node name="LoadQuestButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=124624331]
-custom_minimum_size = Vector2(400, 70)
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_ly50m")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_do8s2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fp6ui")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g43ev")
 text = "LOAD QUEST"
 
 [node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1222821530]
@@ -67,12 +82,14 @@ custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1897507303]
-custom_minimum_size = Vector2(200, 50)
+custom_minimum_size = Vector2(200, 60)
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("2_ly50m")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_do8s2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fp6ui")
+theme_override_styles/focus = SubResource("StyleBoxFlat_g43ev")
 text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="CenterContainer/VBoxContainer" unique_id=908854598]

@@ -25,6 +25,21 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3s3x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7dyb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlahc"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cai0h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olodv"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="game_hud" type="CanvasLayer" unique_id=1317898753]
 
 [node name="next_piece_panel" type="Panel" parent="." unique_id=1988239751]
@@ -143,39 +158,50 @@ texture = ExtResource("3_b3s3x")
 
 [node name="game_over_label" type="Label" parent="end_panel" unique_id=856186970]
 layout_mode = 0
-offset_left = 10.0
-offset_top = -4.0
-offset_right = 317.0
-offset_bottom = 127.0
+offset_left = -145.0
+offset_top = -48.0
+offset_right = 386.0
+offset_bottom = 105.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_colors/font_outline_color = Color(0.37845063, 0.35349837, 0.8388273, 1)
 theme_override_constants/line_spacing = 3
 theme_override_fonts/font = ExtResource("1_b3s3x")
-theme_override_font_sizes/font_size = 33
+theme_override_font_sizes/font_size = 45
 text = "G A M E  O V E R"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="new_game_button" type="Button" parent="end_panel" unique_id=495027670]
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 0
-offset_left = 79.0
-offset_top = 97.0
-offset_right = 215.0
-offset_bottom = 130.0
+offset_left = -29.0
+offset_top = 71.0
+offset_right = 271.0
+offset_bottom = 131.0
 theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
 theme_override_fonts/font = ExtResource("3_pexd4")
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_b3s3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlahc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_cai0h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_olodv")
 text = "NEW GAME"
 
 [node name="main_menu_button" type="Button" parent="end_panel" unique_id=1879600840]
+custom_minimum_size = Vector2(300, 60)
 layout_mode = 0
-offset_left = 73.0
-offset_top = 148.0
-offset_right = 225.0
-offset_bottom = 181.0
+offset_left = -29.0
+offset_top = 142.0
+offset_right = 271.0
+offset_bottom = 202.0
 theme_override_fonts/font = ExtResource("3_pexd4")
-theme_override_font_sizes/font_size = 19
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_b3s3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlahc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_cai0h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_olodv")
 text = "MAIN MENU"
 
 [node name="griot_cry" parent="." unique_id=566828261 instance=ExtResource("3_gjmhc")]

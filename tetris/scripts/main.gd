@@ -159,19 +159,19 @@ func _physics_process(delta: float) -> void:
 		var move_direction = Vector2i.ZERO
 		
 
-		if Input.is_action_just_pressed("ui_left"):
+		if Input.is_action_just_pressed("move_left"):
 			move_direction = Vector2i.LEFT
-		elif Input.is_action_just_pressed("ui_right"):
+		elif Input.is_action_just_pressed("move_right"):
 			move_direction = Vector2i.RIGHT
 		
 		if move_direction != Vector2i. ZERO:
 			move_tetromino( move_direction )
 			
-		if Input.is_action_just_pressed("ui_up"):
+		if Input.is_action_just_pressed("move_up"):
 			rotate_tetromino()
 		
 		var cur_fall_interval = get_fall_speed()
-		if Input.is_action_pressed("ui_down"):
+		if Input.is_action_pressed("move_down"):
 			cur_fall_interval /= fast_fall_multiplier
 		
 		fall_timer += delta
@@ -396,7 +396,7 @@ func calculate_score(lines_cleared_at_once: int) -> int:
 # Update level based on total lines cleared (every 10 lines)
 
 func update_level() -> void:
-	var new_level = lines_cleared / 10
+	var new_level = lines_cleared / 10.0
 	if new_level != level:
 		level = new_level
 		

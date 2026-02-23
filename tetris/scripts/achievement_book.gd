@@ -53,13 +53,41 @@ func _ready() -> void:
 	
 	populate_achievements()
 	
-	# Create back button at the bottom (as child of root, not book sprite)
 	var back_button = Button.new()
 	back_button.text = "BACK"
 	back_button.add_theme_font_override("font", orbitron_font)
 	back_button.add_theme_font_size_override("font_size", 18)
 	back_button.position = Vector2(410, 560)
 	back_button.custom_minimum_size = Vector2(100, 40)
+
+	# --- STYLEBOX SETUP ---
+
+	# 1. Create the Normal Style
+	var style_normal = StyleBoxFlat.new()
+	style_normal.bg_color = Color("99999900") 
+	#style_normal.set_corner_radius_all(5)   # Slightly rounded corners
+	back_button.add_theme_stylebox_override("normal", style_normal)
+
+	# 2. Create the Hover Style (Make it a bit lighter)
+	var style_hover = StyleBoxFlat.new()
+	style_hover.bg_color = Color("083312") 
+	#style_hover.set_corner_radius_all(5)
+	back_button.add_theme_stylebox_override("hover", style_hover)
+
+	# 3. Create the Focus Style (Usually an outline)
+	var style_focus = StyleBoxFlat.new()
+	style_focus.bg_color = Color("083312")   # Keep same bg as normal
+	style_focus.draw_center = true           # Set to false if you want ONLY an outline
+	#style_focus.border_width_left = 2
+	#style_focus.border_width_top = 2
+	#style_focus.border_width_right = 2
+	#style_focus.border_width_bottom = 2
+	#style_focus.border_color = Color("f1c40f") # Gold outline for focus
+	#style_focus.set_corner_radius_all(5)
+	back_button.add_theme_stylebox_override("focus", style_focus)
+
+	# -----------------------
+
 	back_button.pressed.connect(_on_back_pressed)
 	add_child(back_button)
 

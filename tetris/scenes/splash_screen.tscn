@@ -1,7 +1,72 @@
 [gd_scene format=3 uid="uid://bg0io4bxuv7gh"]
 
 [ext_resource type="Script" uid="uid://cxtgyiwm3gipu" path="res://scripts/splash_screen.gd" id="1"]
+[ext_resource type="Shader" uid="uid://bje2u2sbu210x" path="res://transition.gdshader" id="2_4gp4q"]
 [ext_resource type="Texture2D" uid="uid://c4fearfu4fhk1" path="res://assets/IMG_9915.PNG" id="2_hsxvm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4gp4q"]
+shader = ExtResource("2_4gp4q")
+shader_parameter/use_sprite_alpha = true
+shader_parameter/use_transition_texture = false
+shader_parameter/transition_type = 0
+shader_parameter/position = Vector2(0, 0)
+shader_parameter/invert = true
+shader_parameter/grid_size = Vector2(0, 0)
+shader_parameter/rotation_angle = 0.0
+shader_parameter/global_x_mirror = false
+shader_parameter/global_y_mirror = false
+shader_parameter/local_x_mirror = false
+shader_parameter/local_y_mirror = false
+shader_parameter/stagger = Vector2(0, 0)
+shader_parameter/cumulative_stagger_flip = false
+shader_parameter/cumulative_stagger = Vector2(0, 0)
+shader_parameter/stagger_frequency = Vector2i(2, 2)
+shader_parameter/flip_frequency = Vector2i(1, 1)
+shader_parameter/basic_feather = 1.545
+shader_parameter/use_mask_size = false
+shader_parameter/mask_size = Vector2(100, 100)
+shader_parameter/edges = 6
+shader_parameter/shape_feather = 0.1
+shader_parameter/sectors = 1
+shader_parameter/clock_feather = 0.0
+shader_parameter/progress = 0.0
+shader_parameter/progress_bias = Vector2(0, 0)
+
+[sub_resource type="Animation" id="Animation_3mj2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Img9915:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_4gp4q"]
+resource_name = "fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Img9915:material:shader_parameter/progress")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.99),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.785]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3mj2l"]
+_data = {
+&"RESET": SubResource("Animation_3mj2l"),
+&"fade": SubResource("Animation_4gp4q")
+}
 
 [node name="SplashScreen" type="Control" unique_id=40810544]
 layout_mode = 3
@@ -12,41 +77,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=452784009]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.1, 0.1, 0.15, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=99881169]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2128340417]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1443934197]
-layout_mode = 2
-theme_override_font_sizes/font_size = 48
-text = "Chronicles of the Sun Kings"
-horizontal_alignment = 1
-
-[node name="Subtitle" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1327441640]
-layout_mode = 2
-theme_override_font_sizes/font_size = 24
-text = "By Leti Arts Internship Team 5"
-horizontal_alignment = 1
-
 [node name="Img9915" type="Sprite2D" parent="." unique_id=1595883366]
+material = SubResource("ShaderMaterial_4gp4q")
 position = Vector2(348.50003, 352.75)
 scale = Vector2(0.4262195, 0.30444917)
 texture = ExtResource("2_hsxvm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1395219541]
+libraries/ = SubResource("AnimationLibrary_3mj2l")
+autoplay = &"fade"

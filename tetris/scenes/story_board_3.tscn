@@ -6,6 +6,15 @@
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_pjj1p"]
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_ex5gp"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mc34"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov7hf"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjj1p"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="story_board3" type="Control" unique_id=1234526290]
 layout_mode = 3
 anchors_preset = 15
@@ -47,19 +56,27 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="next_button" type="Button" parent="." unique_id=78404916]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
-offset_left = 358.0
+offset_left = 344.0
 offset_top = 483.0
-offset_right = 408.0
+offset_right = 444.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_ex5gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mc34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ov7hf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pjj1p")
 text = "NEXT"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
-offset_left = 206.0
+offset_left = 192.0
 offset_top = 483.0
-offset_right = 260.0
+offset_right = 292.0
 offset_bottom = 514.0
 theme_override_fonts/font = ExtResource("5_ex5gp")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mc34")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ov7hf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pjj1p")
 text = "BACK"

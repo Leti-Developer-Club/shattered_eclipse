@@ -9,9 +9,63 @@
 [ext_resource type="Script" uid="uid://dyq5uuvc621jy" path="res://scenes/controls_panel.gd" id="5_oa1go"]
 [ext_resource type="Script" uid="uid://8ed2vo3uyobs" path="res://scenes/languages.gd" id="6_tbmy8"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbmy8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jk1qb"]
+bg_color = Color(0.03137255, 0.2, 0.07058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dd4i"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lgwnu"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_flqon"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ajci"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7b55j"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pajh"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j7ex8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a8gd2"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hstxw"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [sub_resource type="ExternalTexture" id="ExternalTexture_tbmy8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbmy8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gw5y6"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svtp6"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1dfpl"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qywvv"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3wgol"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
 
 [node name="MainMenu" type="Control" unique_id=1308398218 node_paths=PackedStringArray("menu", "main_settings", "video_settings", "audio_settings", "controls_settings", "language_settings", "back_button", "settings_button", "video_button", "audio_button", "controls_button", "language_button")]
 layout_mode = 3
@@ -47,31 +101,43 @@ layout_mode = 2
 theme_override_constants/separation = 22
 
 [node name="StartButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1674150492]
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_tbmy8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jk1qb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5dd4i")
 text = "START GAME"
 
 [node name="AchievementsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=315769507]
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rcqid")
 text = "KNOWLEDGE JOURNALS"
 
 [node name="settings_button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=2044502777]
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rcqid")
 text = "SETTINGS"
 
 [node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1196826013]
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(400, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_lgwnu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_flqon")
+theme_override_styles/focus = SubResource("StyleBoxFlat_rcqid")
 text = "EXIT GAME"
 
 [node name="settings" type="VBoxContainer" parent="CenterContainer" unique_id=1635809593]
@@ -79,11 +145,21 @@ visible = false
 layout_mode = 2
 theme_override_constants/separation = 22
 
+[node name="Label" type="Label" parent="CenterContainer/settings" unique_id=898453585]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bqqt6")
+theme_override_font_sizes/font_size = 33
+text = "SETTINGS"
+horizontal_alignment = 1
+
 [node name="display" type="Button" parent="CenterContainer/settings" unique_id=881925768]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5pajh")
 text = "DISPLAY"
 
 [node name="audio" type="Button" parent="CenterContainer/settings" unique_id=280277545]
@@ -91,6 +167,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5pajh")
 text = "AUDIO"
 
 [node name="contorls" type="Button" parent="CenterContainer/settings" unique_id=1249078986]
@@ -98,6 +177,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5pajh")
 text = "CONTROLS"
 
 [node name="languages" type="Button" parent="CenterContainer/settings" unique_id=1577540122]
@@ -106,6 +188,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ajci")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7b55j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_5pajh")
 text = "LANGUAGES"
 
 [node name="display_panel" type="VBoxContainer" parent="CenterContainer" unique_id=1237384643 node_paths=PackedStringArray("resolution_option", "fullscreen_check", "borderless_check", "vsync_check")]
@@ -119,10 +204,9 @@ borderless_check = NodePath("HBoxContainer3/borderless_CheckBox")
 vsync_check = NodePath("HBoxContainer4/vSunc_CheckBox")
 
 [node name="title" type="Label" parent="CenterContainer/display_panel" unique_id=1980245507]
-custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 text = "DISPLAY "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -142,6 +226,9 @@ text = "RESOLUTION"
 [node name="res_options" type="OptionButton" parent="CenterContainer/display_panel/HBoxContainer" unique_id=1405225200]
 layout_mode = 2
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j7ex8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8gd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hstxw")
 theme_override_icons/arrow = SubResource("ExternalTexture_tbmy8")
 autowrap_trim_flags = 192
 
@@ -165,6 +252,9 @@ theme_override_constants/h_separation = 4
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
 theme_override_styles/normal = SubResource("StyleBoxEmpty_tbmy8")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j7ex8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8gd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hstxw")
 autowrap_trim_flags = 192
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/display_panel" unique_id=1910826902]
@@ -182,6 +272,9 @@ text = "BORDERLESS"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j7ex8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8gd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hstxw")
 autowrap_trim_flags = 192
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/display_panel" unique_id=707108528]
@@ -199,6 +292,9 @@ text = "V-SYNC"
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_j7ex8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_a8gd2")
+theme_override_styles/focus = SubResource("StyleBoxFlat_hstxw")
 autowrap_trim_flags = 192
 
 [node name="audio_panel" type="VBoxContainer" parent="CenterContainer" unique_id=1602672963 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
@@ -211,10 +307,9 @@ music_slider = NodePath("HBoxContainer2/music_HSlider")
 sfx_slider = NodePath("HBoxContainer3/sfx_HSlider")
 
 [node name="title" type="Label" parent="CenterContainer/audio_panel" unique_id=586272476]
-custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 text = "AUDIO"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -277,10 +372,9 @@ left_button = NodePath("HBoxContainer3/left_Button")
 right_button = NodePath("HBoxContainer4/right_Button")
 
 [node name="title" type="Label" parent="CenterContainer/controls_panel" unique_id=1096262249]
-custom_minimum_size = Vector2(300, 100)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 33
 text = "CONTROLS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -303,6 +397,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gw5y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_svtp6")
 text = "UP"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/controls_panel" unique_id=737979943]
@@ -323,6 +420,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gw5y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_svtp6")
 text = "DOWN"
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/controls_panel" unique_id=1399028019]
@@ -343,6 +443,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gw5y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_svtp6")
 text = "LEFT"
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="CenterContainer/controls_panel" unique_id=417277838]
@@ -363,6 +466,9 @@ custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gw5y6")
+theme_override_styles/focus = SubResource("StyleBoxFlat_svtp6")
 text = "RIGHT"
 
 [node name="languages" type="VBoxContainer" parent="CenterContainer" unique_id=1684389265 node_paths=PackedStringArray("language_option")]
@@ -398,11 +504,15 @@ scale = Vector2(1.2, 1.2)
 
 [node name="back_button" type="Button" parent="." unique_id=81195430]
 visible = false
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
 offset_left = 308.0
-offset_top = 578.0
-offset_right = 395.0
-offset_bottom = 617.0
+offset_top = 554.0
+offset_right = 408.0
+offset_bottom = 593.0
 theme_override_fonts/font = ExtResource("2_bqqt6")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_1dfpl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qywvv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3wgol")
 text = "BACK"
