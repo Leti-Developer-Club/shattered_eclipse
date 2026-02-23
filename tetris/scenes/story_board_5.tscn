@@ -5,6 +5,18 @@
 [ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_m06y7"]
 [ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_e8hkm"]
 [ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_f4cb1"]
+[ext_resource type="FontFile" uid="uid://x56iicd1lguh" path="res://assets/Orbitron/static/Orbitron-Bold.ttf" id="5_m06y7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83c5o"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m06y7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m06y7"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e8hkm"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
 
 [node name="story_board5" type="Control" unique_id=1234526290]
 layout_mode = 3
@@ -33,12 +45,12 @@ texture = ExtResource("3_e8hkm")
 
 [node name="Label" type="Label" parent="." unique_id=1949926150]
 layout_mode = 0
-offset_left = 173.0
-offset_top = 33.0
-offset_right = 454.0
-offset_bottom = 599.0
+offset_left = 172.0
+offset_top = 121.0
+offset_right = 473.0
+offset_bottom = 517.0
 theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
-theme_override_fonts/font = ExtResource("5_f4cb1")
+theme_override_fonts/font = ExtResource("5_m06y7")
 theme_override_font_sizes/font_size = 12
 text = "Your Quest: Restore the Sun-Scrolls
 
@@ -57,19 +69,29 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="begin_quest" type="Button" parent="." unique_id=78404916]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
-offset_left = 292.0
+offset_left = 300.0
 offset_top = 492.0
-offset_right = 409.0
+offset_right = 426.0
 offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_83c5o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m06y7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m06y7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e8hkm")
 text = "BEGIN QUEST"
 
 [node name="back" type="Button" parent="." unique_id=291816390]
+custom_minimum_size = Vector2(100, 20)
 layout_mode = 0
-offset_left = 207.0
+offset_left = 190.0
 offset_top = 492.0
-offset_right = 261.0
+offset_right = 290.0
 offset_bottom = 523.0
 theme_override_fonts/font = ExtResource("5_f4cb1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_83c5o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_m06y7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_m06y7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e8hkm")
 text = "BACK"

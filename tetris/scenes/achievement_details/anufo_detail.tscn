@@ -7,6 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_2gsbp"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_06sph"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gsbp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06sph"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aijx3"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="AnufoDetail" type="Control" unique_id=2084377953]
 layout_mode = 3
 anchors_preset = 15
@@ -50,6 +59,9 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gsbp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06sph")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aijx3")
 text = "BACK"
 
 [node name="Background" type="Sprite2D" parent="." unique_id=685484849]

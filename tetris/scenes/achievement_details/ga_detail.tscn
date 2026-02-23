@@ -7,6 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_tn5a6"]
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_68vwi"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_68vwi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6uvb"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e0iq"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_u6tg1"]
 
 [node name="GaDetail" type="Control" unique_id=1566409118]
@@ -53,6 +62,9 @@ grow_vertical = 0
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_font")
 theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_68vwi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_l6uvb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0e0iq")
 text = "BACK"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=935969509]

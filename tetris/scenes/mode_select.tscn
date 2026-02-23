@@ -5,6 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_eccxc"]
 [ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_q6xnb"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eccxc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6xnb"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjc6h"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
 [node name="ModeSelect" type="Control" unique_id=1480202390]
 layout_mode = 3
 anchors_preset = 15
@@ -45,7 +54,7 @@ text = "SELECT GAME MODE"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1982640219]
-custom_minimum_size = Vector2(0, 30)
+custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="StoryModeButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1505533141]
@@ -55,12 +64,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
 text = "STORY MODE"
 
 [node name="StoryDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=845483684]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eccxc")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Follow Griot's journey to restore the Sun-Scrolls"
 horizontal_alignment = 1
 
@@ -71,12 +83,15 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
 text = "CLASSIC MODE"
 
 [node name="ClassicDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1460050359]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_eccxc")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 12
 text = "Play traditional Tetris with no story"
 horizontal_alignment = 1
 
@@ -87,7 +102,14 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
 text = "HOW TO PLAY"
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1490299281]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1759275400]
 custom_minimum_size = Vector2(300, 60)
@@ -96,4 +118,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_fonts/font = ExtResource("3_eccxc")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
 text = "BACK"

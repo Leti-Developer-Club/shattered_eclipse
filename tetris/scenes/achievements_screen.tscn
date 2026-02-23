@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b2nc6jwu3yfok"]
 
 [ext_resource type="Script" uid="uid://cjws3vr12efvu" path="res://scripts/achievements_screen.gd" id="1"]
-[ext_resource type="FontFile" uid="uid://fuhlij05r5ju" path="res://assets/PressStart2P-Regular.ttf" id="2_cvcn7"]
+[ext_resource type="FontFile" uid="uid://c16g4jhlbh1hw" path="res://assets/PressStart2P-Regular.ttf" id="2_cvcn7"]
 [ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_3ourl"]
 
 [node name="AchievementsScreen" type="Control" unique_id=412156435]
