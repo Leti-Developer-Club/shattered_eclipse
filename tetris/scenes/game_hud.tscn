@@ -1,0 +1,209 @@
+[gd_scene format=3 uid="uid://cr72adhvxfaku"]
+
+[ext_resource type="FontFile" uid="uid://br2v6gis26ouv" path="res://assets/Orbitron/static/Orbitron-ExtraBold.ttf" id="1_b3s3x"]
+[ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="1_jna2d"]
+[ext_resource type="Texture2D" uid="uid://ts7hr0rs1o17" path="res://assets/book-page.png" id="3_b3s3x"]
+[ext_resource type="PackedScene" uid="uid://cgfxw2uyui26a" path="res://scenes/griot_cry.tscn" id="3_gjmhc"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_pexd4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8t4dp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n64bn"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b3s3x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7dyb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jlahc"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cai0h"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olodv"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="game_hud" type="CanvasLayer" unique_id=1317898753]
+
+[node name="next_piece_panel" type="Panel" parent="." unique_id=1988239751]
+custom_minimum_size = Vector2(180, 125)
+offset_left = 436.0
+offset_top = 47.0
+offset_right = 616.0
+offset_bottom = 172.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t4dp")
+
+[node name="BookPage2" type="Sprite2D" parent="next_piece_panel" unique_id=497541325]
+visible = false
+self_modulate = Color(1, 1, 1, 0.27450982)
+show_behind_parent = true
+position = Vector2(90.50001, 61.999996)
+scale = Vector2(0.34381136, 0.13495576)
+texture = ExtResource("3_b3s3x")
+
+[node name="next" type="Label" parent="." unique_id=1224442995]
+offset_left = 455.0
+offset_top = 13.0
+offset_right = 550.0
+offset_bottom = 44.0
+theme_override_fonts/font = ExtResource("1_b3s3x")
+theme_override_font_sizes/font_size = 24
+text = "NEXT"
+horizontal_alignment = 1
+
+[node name="huge_panel" type="Panel" parent="." unique_id=782593153]
+custom_minimum_size = Vector2(200, 150)
+offset_left = 441.0
+offset_top = 205.0
+offset_right = 652.0
+offset_bottom = 522.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8t4dp")
+
+[node name="BookPage" type="Sprite2D" parent="huge_panel" unique_id=819743509]
+visible = false
+self_modulate = Color(1, 1, 1, 0.27450982)
+show_behind_parent = true
+position = Vector2(106.500015, 158.50005)
+scale = Vector2(0.41060907, 0.34845135)
+texture = ExtResource("3_b3s3x")
+
+[node name="score_label" type="Label" parent="huge_panel" unique_id=1932201228]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.0
+offset_top = -79.0
+offset_right = 91.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_b3s3x")
+theme_override_font_sizes/font_size = 25
+text = "SCORE: 0"
+vertical_alignment = 1
+
+[node name="lines_cleared" type="Label" parent="huge_panel" unique_id=28203544]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -188.0
+offset_right = 88.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_b3s3x")
+theme_override_font_sizes/font_size = 24
+text = "LINES : "
+vertical_alignment = 1
+
+[node name="level" type="Label" parent="huge_panel" unique_id=1833469837]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -101.5
+offset_top = -315.0
+offset_right = 106.0
+offset_bottom = -172.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_b3s3x")
+theme_override_font_sizes/font_size = 24
+text = "LEVEL :"
+vertical_alignment = 1
+
+[node name="griot" parent="." unique_id=1787747308 instance=ExtResource("1_jna2d")]
+position = Vector2(557, 600)
+scale = Vector2(3.5, 3.5)
+
+[node name="end_panel" type="Panel" parent="." unique_id=13143682]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 109.0
+offset_top = 205.0
+offset_right = 459.0
+offset_bottom = 451.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_n64bn")
+
+[node name="BookPage" type="Sprite2D" parent="end_panel" unique_id=1804657152]
+visible = false
+position = Vector2(173.99997, 122.499985)
+scale = Vector2(0.6876228, 0.2710177)
+texture = ExtResource("3_b3s3x")
+
+[node name="game_over_label" type="Label" parent="end_panel" unique_id=856186970]
+layout_mode = 0
+offset_left = -145.0
+offset_top = -48.0
+offset_right = 386.0
+offset_bottom = 105.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("1_b3s3x")
+theme_override_font_sizes/font_size = 45
+text = "G A M E  O V E R"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="new_game_button" type="Button" parent="end_panel" unique_id=495027670]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 0
+offset_left = -29.0
+offset_top = 71.0
+offset_right = 271.0
+offset_bottom = 131.0
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 0)
+theme_override_fonts/font = ExtResource("3_pexd4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_b3s3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlahc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_cai0h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_olodv")
+text = "NEW GAME"
+
+[node name="main_menu_button" type="Button" parent="end_panel" unique_id=1879600840]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 0
+offset_left = -29.0
+offset_top = 142.0
+offset_right = 271.0
+offset_bottom = 202.0
+theme_override_fonts/font = ExtResource("3_pexd4")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_b3s3x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i7dyb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jlahc")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_cai0h")
+theme_override_styles/focus = SubResource("StyleBoxFlat_olodv")
+text = "MAIN MENU"
+
+[node name="griot_cry" parent="." unique_id=566828261 instance=ExtResource("3_gjmhc")]
+position = Vector2(552, 603)
+scale = Vector2(0.5, 0.5)

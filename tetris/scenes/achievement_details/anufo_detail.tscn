@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dutypwqc1t6ex"]
+
+[ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
+[ext_resource type="Script" uid="uid://bq5jgivc14lm" path="res://scripts/achievement_details/anufo_detail.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_am6ck"]
+[ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_2gsbp"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_06sph"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2gsbp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_06sph"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aijx3"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="AnufoDetail" type="Control" unique_id=2084377953]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=969152913]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="BookSprite" type="Sprite2D" parent="." unique_id=1636195002]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(341.00003, 367)
+scale = Vector2(1.2675478, 1.669746)
+texture = ExtResource("1_book")
+
+[node name="ContentContainer" type="VBoxContainer" parent="." unique_id=1122170538]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 150.0
+offset_top = -99.0
+offset_right = 250.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="ContentContainer" unique_id=832920553]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_2gsbp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_06sph")
+theme_override_styles/focus = SubResource("StyleBoxFlat_aijx3")
+text = "BACK"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=685484849]
+visible = false
+show_behind_parent = true
+position = Vector2(359, 413)
+texture = ExtResource("5_am6ck")
+
+[node name="anufu_mask" type="Sprite2D" parent="." unique_id=154011226]
+texture_filter = 1
+position = Vector2(445.00003, 581)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_2gsbp")
+region_enabled = true
+region_rect = Rect2(0, -2, 178, 222)
+
+[node name="LeftPage" type="VBoxContainer" parent="." unique_id=1942268169]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 91.0
+offset_right = 340.0
+offset_bottom = 676.0
+theme_override_constants/separation = 15
+
+[node name="Title" type="Label" parent="LeftPage" unique_id=499860212]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 24
+text = "Anufo Tribe"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="LeftPage" unique_id=474952921]
+texture_filter = 2
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The Anufo or Chakosi are an Akan people who live in the Dapaong and (Sansanné-)Mango areas of Togo, as well as in Ghana. They trace their origin to a place called Anou or Ano on the Komoé River in the Ivory Coast. Thus, they refer to themselves Anoufou \"people of Anu\"."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="LeftPage" unique_id=1072393221]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The Anufor hardly ambushed any village they intended to attack. They would usually send a messenger to announce the possibility of war if the chief did not yield to the demands of supplying food and livestock to the army commanders of the Anou. The messenger thus presents pellets and corn, choosing the former meant they were prepared for war, the latter meant their demands will be met."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="." unique_id=2073902405]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 135.0
+offset_right = 599.0
+offset_bottom = 531.0
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="RightPage" unique_id=1396596191]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "The prefix (Na/Nam) has been added to each name of the military commanders to read Biemah and Somah. This is so because, in Anufor culture, one cannot mention the name of a grandfather without that prefix which often translates to 'Nana' or grandfather in several Akan dialects. The names of these commanders are still used throughout Anuforland and quite common with the descendants of the two commanders who form the only two recognised royal families/gates in Anuforland that ascend to the skin of kingship in Nzara or SanSanne Mango."
+autowrap_mode = 3
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=779433162]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_06sph")

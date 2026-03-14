@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://24r07tmm8fss"]
+
+[ext_resource type="Script" uid="uid://dbmj23t11x8vm" path="res://scripts/mode_select.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_eccxc"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_eccxc"]
+[ext_resource type="PackedScene" uid="uid://cify4sx8g3tep" path="res://scenes/griot.tscn" id="5_q6xnb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eccxc"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q6xnb"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yjc6h"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="ModeSelect" type="Control" unique_id=1480202390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=226580837]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.41, 1.091)
+texture = ExtResource("4_eccxc")
+
+[node name="griot" parent="." unique_id=1787747308 instance=ExtResource("5_q6xnb")]
+position = Vector2(688, 688)
+scale = Vector2(1.2, 1.2)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1305065970]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2073349894]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="CenterContainer/VBoxContainer" unique_id=35497338]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 33
+text = "SELECT GAME MODE"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1982640219]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="StoryModeButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1505533141]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
+text = "STORY MODE"
+
+[node name="StoryDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=845483684]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 12
+text = "Follow Griot's journey to restore the Sun-Scrolls"
+horizontal_alignment = 1
+
+[node name="ClassicModeButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1576565827]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
+text = "CLASSIC MODE"
+
+[node name="ClassicDescription" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1460050359]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 12
+text = "Play traditional Tetris with no story"
+horizontal_alignment = 1
+
+[node name="how_to_play" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1337352138]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
+text = "HOW TO PLAY"
+
+[node name="Spacer2" type="Control" parent="CenterContainer/VBoxContainer" unique_id=1490299281]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1759275400]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("3_eccxc")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_eccxc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_q6xnb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yjc6h")
+text = "BACK"

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dvqviq5yr6u0e"]
+
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_1hayb"]
+[ext_resource type="Script" uid="uid://c8qvlsofidh6j" path="res://scripts/story_board2.gd" id="1_5eknf"]
+[ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_5eknf"]
+[ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_cluyi"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_qkynd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hayb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5eknf"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cluyi"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="story_board2" type="Control" unique_id=1234526290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5eknf")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
+position = Vector2(348, 220.00002)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_1hayb")
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(318, 328)
+scale = Vector2(0.58687943, 0.54535013)
+texture = ExtResource("2_5eknf")
+
+[node name="Muzu" type="Sprite2D" parent="." unique_id=348490815]
+position = Vector2(665, 509)
+scale = Vector2(0.9044118, 0.959695)
+texture = ExtResource("3_cluyi")
+
+[node name="Label" type="Label" parent="." unique_id=1949926150]
+texture_filter = 1
+layout_mode = 0
+offset_left = 204.0
+offset_top = 162.0
+offset_right = 434.0
+offset_bottom = 484.0
+theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
+theme_override_fonts/font = ExtResource("5_qkynd")
+theme_override_font_sizes/font_size = 16
+text = "For thousands of years, the history of the African continent was protected by the Sun-Kings. They held their power not in swords, but in the Sun-Scrolls; a collection of every innovation, proverb, and trade secret from the North to the South."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="back_button" type="Button" parent="." unique_id=78404916]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 483.0
+offset_right = 292.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_qkynd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hayb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5eknf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cluyi")
+text = "BACK"
+
+[node name="next_button" type="Button" parent="." unique_id=1534961620]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_left = 342.0
+offset_top = 483.0
+offset_right = 442.0
+offset_bottom = 514.0
+theme_override_fonts/font = ExtResource("5_qkynd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hayb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5eknf")
+theme_override_styles/focus = SubResource("StyleBoxFlat_cluyi")
+text = "NEXT"

@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://ca0ytl7wurswf"]
+
+[ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_book"]
+[ext_resource type="Script" uid="uid://blia0f4q2fv7s" path="res://scripts/achievement_details/fante_detail.gd" id="2_script"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="3_font"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="5_d8qx3"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="6_3t766"]
+[ext_resource type="Texture2D" uid="uid://bako43jh81vdf" path="res://assets/masks/big-removebg-preview.png" id="6_t70cs"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t70cs"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3t766"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qyqvp"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="FanteDetail" type="Control" unique_id=31283294]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=844584806]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0.15, 0.15, 1)
+
+[node name="BookSprite" type="Sprite2D" parent="." unique_id=1407697426]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(339.8125, 363.5)
+scale = Vector2(1.2103553, 1.7020785)
+texture = ExtResource("1_book")
+
+[node name="ContentContainer" type="VBoxContainer" parent="." unique_id=2092440676]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 134.0
+offset_top = -107.0
+offset_right = 234.0
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="BackButton" type="Button" parent="ContentContainer" unique_id=593881769]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_t70cs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3t766")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qyqvp")
+text = "BACK"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1983313747]
+visible = false
+show_behind_parent = true
+position = Vector2(314, 330)
+texture = ExtResource("5_d8qx3")
+
+[node name="fante_mask" type="Sprite2D" parent="." unique_id=1341185616]
+texture_filter = 1
+position = Vector2(444, 411.99997)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("6_t70cs")
+region_enabled = true
+region_rect = Rect2(355, -9, 197, 232)
+
+[node name="LeftPage" type="VBoxContainer" parent="." unique_id=407188700]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 72.0
+offset_right = 338.0
+offset_bottom = 642.0
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="LeftPage" unique_id=510861242]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 15
+text = "The Fantes - Coastal Region"
+horizontal_alignment = 1
+
+[node name="Page1" type="Label" parent="LeftPage" unique_id=1443199787]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 12
+text = "The Fante (Mfantsefo) are a major Akan subgroup primarily inhabiting the central coastal regions of Ghana, known for forming a powerful confederacy against the Ashanti Empire, their significant role in trade, and rich matrilineal traditions centered in Mankessim, their spiritual capital, with distinct Fante dialects and strong cultural ties to fishing and maritime history."
+autowrap_mode = 3
+
+[node name="Page2" type="Label" parent="LeftPage" unique_id=1241943067]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "Their traditional food includes Kenkey, Banku (Etsew) that is eaten with fish including Tilapia and other seafood, fresh pepper and vegetables. Many Fante's from the interior also traditionally eat yam and coco yams (ampesie) and fufu. The Oguaa Fetu Afahye (an annual traditional festival celebrated in Cape Coast) is actually a yam harvest festival that was previously celebrated in the Bono Kingdom and was brought to the coast during the exodus."
+autowrap_mode = 3
+
+[node name="RightPage" type="VBoxContainer" parent="." unique_id=1029786272]
+layout_mode = 0
+offset_left = 353.0
+offset_top = 110.000015
+offset_right = 594.0
+offset_bottom = 410.0
+theme_override_constants/separation = 15
+
+[node name="Page3" type="Label" parent="RightPage" unique_id=1762895028]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 13
+text = "Fetu Afahye Festival is one of the most important festivals celebrated by the Fante ethnic group. It is celebrated as a remembrance of a historic disease outbreak, to keep the towns clean and to prevent another epidemic befalling the Fante people."
+autowrap_mode = 3
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=937106945]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("6_3t766")

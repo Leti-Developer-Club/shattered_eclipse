@@ -1,0 +1,60 @@
+GAME DESIGN DOCUMENT: Chronicles of the Sun-Kings
+
+Team: 5
+Topic: African History and Continental Heritage
+Target Audience: Primary school learners
+
+1. Game Overview
+Chronicles of the Sun-Kings is an interactive 2D educational adventure following the legacy of great African civilizations. Players navigate diverse landscapes across the entire continent, transitioning from a young apprentice to a master "Griot" (storykeeper). The game uses a top-down and side-scroller hybrid style with a turn-based mechanic focused on knowledge and diplomacy.
+
+2. Educational Objectives
+• Historical Lifecycles: Learn about the rise and evolution of ancient African empires.
+• Cultural Geography: Discover the correct fauna and flora of historical landscapes, such as the Saharan trade routes and the Nile valley.
+• Conflict Resolution: At all stages of the game, players learn to avoid violent conflict by using "Knowledge Duels" and peaceful trade.
+
+3. Gameplay and Mechanics
+• Exploration: Navigate top-down environments to discover ancient artifacts and "Knowledge Fragments".
+• Turn-Based Knowledge Duels: Replaces traditional "Attack" menus with options for Logic, Proverbs, and Trade.
+• Evolution: As players learn more, their character "evolves" in status, gaining new abilities to negotiate with powerful historical figures.
+
+4. Story, Setting, and Character
+• Setting: The vast landscapes of ancient Africa, from the walls of Great Zimbabwe to the libraries of Timbuktu.
+• The Guide: Muzu, the spirit guide and shaman, acts as the narrator.
+• Synopsis: The "Sun-King's" history has been locked away. Players must travel the continent to unlock the "jars" of history and restore the legacy of the people.
+
+5. Interface & UX
+• The Sankofa System:
+  * The Symbol: Based on the "Sankofa" bird, which looks back while moving forward. "Go back and get it"
+  • Function: This is the primary UI button for the "History Log." It allows kids to "go back" and review facts they have learned to solve current puzzles.
+• Philosophy: It serves the pedagogical objective that "it is not taboo to go back for what you forgot".
+• Visual System: A dynamic HUD that changes its "Look and Feel" (e.g., textures of gold, mud-cloth, or stone) depending on the country the player is currently in.
+• Control System: Optimized for touch screens with specific commands for exploring and "analyzing" historical objects.
+
+6. Audio and Sound
+• Music: Regional African soundscapes featuring instruments like the Kora and Mbira.
+• Voiceover: Full narration by anyone (muzu) to guide younger learners who are still developing reading skills.
+
+The Story: The Shattered Eclipse
+The chronicles of the Sun-Kings
+
+For thousands of years, the history of the African continent was protected by the Sun-Kings. They held their power not in swords, but in the "Sun-Scrolls" a collection of every innovation, proverb, and trade secret from the North to the South. This knowledge was kept in a magical golden jar, guarded by the Great Shaman, Muzu.
+
+The Great Forgetting
+However, a shadow known as "The Eclipse" grew jealous of this light. It shattered the golden jar, scattering the history of the continent to the winds. Suddenly, people forgot how to trade fairly in the West, how to build the great stone walls in the South, and how to read the stars in the North. The world began to lose its color, turning into a grey, silent landscape.
+
+The Hero's Journey
+You play as a young apprentice Griot. You are the only one who can still see the faint "glimmer" of the lost history. Muzu, now a spirit guide trapped within the remaining fragments of the jar, calls out to you. He gives you the Griot's Compass, a magical device that points toward lost knowledge.
+
+The Quest for the Sankofa Bird
+Muzu explains that to restore the world, you must follow the path of the Sankofa Bird. You must travel across the continent's diverse landscapes to retrieve the pieces of history:
+
+• The Golden Courts of Wagadugu: To learn the value of fair exchange and trade.
+
+• The Libraries of the North: To rediscover the math and architecture that built the pyramids.
+
+• The Stone Fortresses of the South: To learn how unity and engineering build walls that never fall.
+
+The Restoration
+In every city, you will face "The Forgotten" people who have lost their way. You don't fight them with weapons; you "battle" them with the facts you've collected in your Sankofa Journal. Every time you win a "Knowledge Duel," a piece of the Sun-Scroll is restored, and color returns to that part of the continent.
+
+Your journey ends when you reassemble the Sun-Scrolls and prove to the world that "it is not taboo to go back for what you have forgotten".

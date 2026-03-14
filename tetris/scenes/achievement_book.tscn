@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dahc0mnx7v04e"]
+
+[ext_resource type="Texture2D" uid="uid://d2g7pnl5ckci7" path="res://assets/book-removebg-preview.png" id="1_i0i8o"]
+[ext_resource type="Texture2D" uid="uid://cfrcemnkrho38" path="res://assets/background.png" id="3_1sbau"]
+[ext_resource type="Script" uid="uid://sct47xka2cmb" path="res://scripts/achievement_book.gd" id="3_script"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="4_o6r7u"]
+
+[node name="achievement-book" type="Control" unique_id=450738389]
+clip_children = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("3_script")
+
+[node name="book" type="Sprite2D" parent="." unique_id=1097500014]
+self_modulate = Color(1, 1, 1, 0.8627451)
+texture_filter = 1
+position = Vector2(-14, -4)
+scale = Vector2(1.2426343, 1.6351038)
+texture = ExtResource("1_i0i8o")
+centered = false
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1683127236]
+visible = false
+show_behind_parent = true
+position = Vector2(343, 325)
+texture = ExtResource("3_1sbau")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=855569013]
+show_behind_parent = true
+position = Vector2(340, 215)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_o6r7u")

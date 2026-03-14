@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://d1rsvyn31qkdm"]
+
+[ext_resource type="Script" uid="uid://bb8bdn7bhvpbb" path="res://scripts/story_board4.gd" id="1_1g12b"]
+[ext_resource type="Texture2D" uid="uid://eiij2ifv3sjk" path="res://assets/story_board/backgroundo.png" id="1_jwa7t"]
+[ext_resource type="Texture2D" uid="uid://bstqyyow7cufk" path="res://assets/story_board/scroll.png" id="2_1g12b"]
+[ext_resource type="Texture2D" uid="uid://dj8g4hxij6ijr" path="res://assets/story_board/Muzu.png" id="3_e0uiu"]
+[ext_resource type="FontFile" uid="uid://5fjsjv7p232" path="res://assets/Orbitron/static/Orbitron-SemiBold.ttf" id="5_0q5lq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jwa7t"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1g12b"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0uiu"]
+bg_color = Color(0.029999996, 0.2, 0.07249999, 1)
+
+[node name="story_board4" type="Control" unique_id=1234526290]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1g12b")
+
+[node name="Backgroundo" type="Sprite2D" parent="." unique_id=1336595277]
+position = Vector2(348, 220.00002)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("1_jwa7t")
+
+[node name="Scroll" type="Sprite2D" parent="." unique_id=2090008584]
+self_modulate = Color(1, 1, 1, 0.8627451)
+position = Vector2(318, 328)
+scale = Vector2(0.58687943, 0.54535013)
+texture = ExtResource("2_1g12b")
+
+[node name="Muzu" type="Sprite2D" parent="." unique_id=348490815]
+position = Vector2(665, 509)
+scale = Vector2(0.9044118, 0.959695)
+texture = ExtResource("3_e0uiu")
+
+[node name="Label" type="Label" parent="." unique_id=1949926150]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 108.0
+offset_right = 438.0
+offset_bottom = 504.0
+theme_override_colors/font_color = Color(5.1608413e-06, 5.160842e-06, 5.1608413e-06, 1)
+theme_override_fonts/font = ExtResource("5_0q5lq")
+theme_override_font_sizes/font_size = 16
+text = "You are a young apprentice Griot— the only one who can still see the faint glimmer of lost history. Muzu, now a spirit guide, calls out to you. He gives you the Griot's Compass, which points toward lost knowledge"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="next" type="Button" parent="." unique_id=78404916]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_left = 343.0
+offset_top = 484.0
+offset_right = 443.0
+offset_bottom = 513.0
+theme_override_fonts/font = ExtResource("5_0q5lq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwa7t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1g12b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e0uiu")
+text = "NEXT"
+
+[node name="back" type="Button" parent="." unique_id=291816390]
+custom_minimum_size = Vector2(100, 20)
+layout_mode = 0
+offset_left = 192.0
+offset_top = 484.0
+offset_right = 292.0
+offset_bottom = 515.0
+theme_override_fonts/font = ExtResource("5_0q5lq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jwa7t")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1g12b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_e0uiu")
+text = "BACK"
